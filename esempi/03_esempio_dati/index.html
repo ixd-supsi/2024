@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Esempio 03 – Dati</title>
+</head>
+
+
+
+
+<body>
+
+	<div class="lista"></div>
+
+</body>
+
+
+
+<script>
+
+
+	function comparatore( a, b ) {
+		// return a > b ? -1 : 1
+		return b.length - a.length
+	}
+
+
+	fetch('passwords.txt')
+		.then( res => res.text())
+		.then( txt => {
+			let out = ""
+			txt.split("\n")
+			.sort( comparatore)
+			.forEach( p => {
+				out += p + "<br>"
+			})
+			document.querySelector('.lista').innerHTML = out
+		})
+</script>
+
+</html>
