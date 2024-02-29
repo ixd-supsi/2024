@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Esempio 02 – Dati</title>
+</head>
+
+
+
+
+<body>
+
+
+</body>
+
+
+
+<script>
+
+	for (let i=0; i<10000; i++) {
+		if (i%100 == 0) document.querySelector('body').innerHTML += "<br>"
+		let dado = Math.random() * 6 + 1
+		dado = Math.floor(dado)
+		document.querySelector('body').innerHTML += dado
+	}
+
+</script>
+
+</html>
