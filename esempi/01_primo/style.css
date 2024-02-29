@@ -1,0 +1,9 @@
+a {
+	color: tomato;
+	text-decoration: none;
+	transition: all 0.5s;
+}
+a:hover{
+	color: white;
+	background-color: tomato;
+}
