@@ -1,19 +1,18 @@
-const sequenza = []
-
-function preload(){
-	for (let i=0; i<100; i++) {
-		sequenza.push(loadImage("./frames_small/" + (i * 18 + "").padStart(4, "0") + ".jpg"))
-	}
-}
+let immagini = []
 
 function setup() {
 	createCanvas(windowWidth, windowHeight)
+	for(let i=0; i<300; i++) {
+		immagini[i] = loadImage("./frames_small/" + (i*6+"").padStart(4, "0") + ".jpg")
+	}
 }
 
 function draw() {
 	background(200)
-	for (let i=0; i<sequenza.length; i++) {
-		image(sequenza[i], i * mouseX * 0.1, i * mouseY * 0.1, 320, 180)
+	let frame = mouseX
+	if(frame >= immagini.length) frame = immagini.length - 1
+	for(let i=0; i<frame; i++) {
+		image(immagini[i], i*2, i*1)
 	}
 }
 
