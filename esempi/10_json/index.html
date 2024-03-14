@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Emoji emotions</title>
+	<style>
+		main {
+			font-size: 2em;
+			display: grid;
+			width: 1px;
+			grid-template-columns: repeat(10, auto);
+		}
+	</style>
+</head>
+<body>
+	<main></main>
+	<script>
+		run()
+		async function run() {
+
+			let data
+
+			// Carichiamo il file locale "emoji.json"
+			await fetch("emoji.json")
+			.then(r => r.json())
+			.then( json => {
+					// Il contenuto del file emoji.json, una volta caricato
+					// viene assegnato alla nostra variabile "data"
+					data = json
+				})
+
+			// Grazie alla parola chiave "await" (sopra)
+			// siamo sicuri che a questo punto dell’esecuzione del programma
+			// i dati sono stati caricati e assegnati a "data"
+
+			const parent = document.querySelector('main')
+
+			let output = ""
+			for (let i=0; i<data.length; i++) {
+				output += "<div>"
+				output += data[i].char
+				// output += data[i].name + "<br>"
+				// output += data[i].codes + "<br>"
+				// output += data[i].category + "<br>"
+				// output += data[i].group + "<br>"
+				// output += data[i].subgroup + "<br>"
+				output += "</div>"
+			}
+			document.querySelector('main').innerHTML = output
+		}
+	</script>
+</body>
+</html>
