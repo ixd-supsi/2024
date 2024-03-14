@@ -9,7 +9,7 @@ Esempi di codice e documenti per il semestre primaverile CV2, SUPSI
 - [The Coding Train](https://thecodingtrain.com)², Daniel Shiffmann
 - [Learn p5js](https://p5js.org/learn/)
 
-¹ È possibile comandare la versione cartacea 
+¹ È possibile comandare la versione cartacea<br/>
 ² Lezioni video
 
 ### Librerie/frameworks JavaScript:
