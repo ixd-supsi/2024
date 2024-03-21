@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>100 film</title>
+	<style>
+		main {
+			display: grid;
+			grid-template-columns: 1fr 1fr 0.1fr 1fr;
+			column-gap: 1em;
+			/* grid-template-columns: 1fr; */
+
+			/* grid-template-columns: repeat(10, auto); */
+			/* width: 1px; */
+			font-size: 1em;
+		}
+
+	</style>
+</head>
+<body>
+	<main></main>
+	<script>
+		run()
+		async function run() {
+
+			let data
+
+			// Carichiamo il file locale "emoji.json"
+			await fetch("100_film.json")
+				  .then(/*r => r.json()*/ function(r) { return r.json() } )
+				  .then( json => {
+					// Il contenuto del file emoji.json, una volta caricato
+					// viene assegnato alla nostra variabile "data"
+					data = json
+				})
+
+			// Grazie alla parola chiave "await" (sopra)
+			// siamo sicuri che a questo punto dell’esecuzione del programma
+			// i dati sono stati caricati e assegnati a "data"
+
+			data.sort(function(elementoA, elementoB) {
+				if (elementoA.regista > elementoB.regista) return 1
+				return -1
+			})
+
+			// data = data.filter( function(elemento) {
+			// 	if (elemento.anno > 2000) return true
+			// 	return true
+			// })
+
+
+			let output = ""
+			for (let i=0; i<data.length; i++) {
+				output += "<div>" + data[i].titolo + "</div>"
+				output += "<div>" + data[i].regista + "</div>"
+				output += "<div>" + data[i].anno + "</div>"
+				output += "<div>" + data[i].genere + "</div>"
+			}
+			document.querySelector('main').innerHTML = output
+		}
+	</script>
+</body>
+</html>
