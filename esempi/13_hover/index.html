@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Hover</title>
+	<style>
+
+		body {
+			padding: 3em;
+		}
+
+		main {
+			display: grid;
+			grid-template-columns: min-content min-content min-content;
+			column-gap: 1em;
+			row-gap: 1em;
+		}
+
+		.item {
+			border: solid 2px black;
+			width: 200px;
+			background-color: black;
+			box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.3);
+		}
+
+		.item:hover .dida{
+			opacity: 1.0;
+		}
+
+		.item .quad {
+			height: 200px;
+		}
+
+		.item .dida {
+			transition: opacity 100ms;
+			opacity: 0;
+			background-color: black;
+			color: white;
+		}
+	</style>
+</head>
+
+<body>
+	<main>
+		<div class="item">
+			<div style="background-color: tomato" class="quad"></div>
+			<div class="dida">Ciao a tutti 1</div>
+		</div>
+
+		<div class="item">
+			<div style="background-color: gold" class="quad"></div>
+			<div class="dida">Ciao a tutti 2</div>
+		</div>
+
+		<div class="item">
+			<div style="background-color: royalblue" class="quad"></div>
+			<div class="dida">Ciao a tutti 3</div>
+		</div>
+
+		<div class="item">
+			<div style="background-color: pink" class="quad"></div>
+			<div class="dida">Ciao a tutti 3</div>
+		</div>
+
+		<div class="item">
+			<div style="background-color: tomato" class="quad"></div>
+			<div class="dida">Ciao a tutti 1</div>
+		</div>
+
+		<div class="item">
+			<div style="background-color: gold" class="quad"></div>
+			<div class="dida">Ciao a tutti 2</div>
+		</div>
+
+		<div class="item">
+			<div style="background-color: royalblue" class="quad"></div>
+			<div class="dida">Ciao a tutti 3</div>
+		</div>
+
+		<div class="item">
+			<div style="background-color: pink" class="quad"></div>
+			<div class="dida">Ciao a tutti 3</div>
+		</div>
+
+		<div class="item">
+			<div style="background-color: tomato" class="quad"></div>
+			<div class="dida">Ciao a tutti 1</div>
+		</div>
+
+		<div class="item">
+			<div style="background-color: gold" class="quad"></div>
+			<div class="dida">Ciao a tutti 2</div>
+		</div>
+
+		<div class="item">
+			<div style="background-color: royalblue" class="quad"></div>
+			<div class="dida">Ciao a tutti 3</div>
+		</div>
+
+		<div class="item">
+			<div style="background-color: pink" class="quad"></div>
+			<div class="dida">Ciao a tutti 3</div>
+		</div>
+	</main>
+</body>
+</html>
