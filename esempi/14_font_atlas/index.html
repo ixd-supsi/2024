@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Font exporter</title>
+	<style>
+		@font-face {
+			font-family: "Font";
+			src: url('./font/Roboto-Bold.ttf');
+			/* src: url('./font/TrajanColor-Concept.otf'); */
+		}
+		body {
+			margin: 3em;
+			font-family: "Font";
+			background-color: lightgray;
+		}
+	</style>
+
+</head>
+<body>
+	<canvas></canvas>
+	<script>
+
+		addEventListener('load', function() {
+
+			const canvas = document.querySelector('canvas')
+			const ctx = canvas.getContext('2d')
+
+			const DIM = 300
+			const FONT_SIZE = 250
+			const SEQUENZA = "ABCabc123"
+
+			canvas.width = DIM
+			canvas.height = DIM
+
+			for (let i=0; i<SEQUENZA.length; i++) {
+				ctx.fillStyle = 'white'
+				ctx.fillRect(0, 0, canvas.width, canvas.height)
+
+				ctx.strokeStyle = 'red'
+				ctx.beginPath()
+				ctx.moveTo(0, DIM/2)
+				ctx.lineTo(DIM, DIM/2)
+				ctx.moveTo(DIM/2, 0)
+				ctx.lineTo(DIM/2, DIM)
+				ctx.stroke()
+
+				const carattere = SEQUENZA[i]
+
+				ctx.font = FONT_SIZE + 'px Font'
+				ctx.fillStyle = 'black'
+				ctx.textAlign = 'center'
+				ctx.textBaseline = 'middle'
+				ctx.fillText(carattere, DIM/2, DIM * 0.55)
+
+				let fileName
+				if (isUpperCase(carattere)) {
+					fileName = carattere + "_upper.png"
+				} else {
+					fileName = carattere + ".png"
+				}
+
+				saveImage(fileName, canvas)
+			}
+		})
+
+		function saveImage(filename, canvas) {
+			canvas.toBlob(blob => saveBlob(blob, filename))
+		}
+
+		const saveBlob = (function() {
+			const a = document.createElement('a')
+			document.body.appendChild(a)
+			a.style.display = 'none'
+			return function(blob, fileName) {
+				a.href = URL.createObjectURL(blob)
+				a.download = fileName
+				a.click()
+			}
+		}())
+
+		function isUpperCase(string) {
+			return /^[A-Z]*$/.test(string)
+		}
+
+	</script>
+
+</body>
+</html>
