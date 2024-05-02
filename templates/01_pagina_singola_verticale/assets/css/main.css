@@ -57,6 +57,9 @@ ul {
 /* -- breakpoint: schermi piccoli, larghezza massima 500 pixel -- */
 
 @media only screen and (max-width: 600px) {
+	body {
+		background-color: pink;
+	}
 	header,
 	section {
 		grid-template-columns: 1fr;
@@ -71,6 +74,9 @@ ul {
 		width: 100%;
 	}
 	img {
+		width: 100%;
+	}
+	iframe {
 		width: 100%;
 	}
 }
