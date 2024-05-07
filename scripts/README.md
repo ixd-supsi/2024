@@ -24,7 +24,7 @@ echo "export PATH=/opt/homebrew/bin:$PATH" >> ~/.zshrc
 
 
 
-#Imagemagick
+# Imagemagick
 
 Ridmimensiona e converti le immagini di un’intera cartella: 
 ```
