@@ -1,4 +1,4 @@
-### Struttura cartelle:  
+### Struttura cartelle 
 ```
 /img_orig  # cartella con le immagini originali 
 /img_512   # cartella con le immagini ridimensionate 
