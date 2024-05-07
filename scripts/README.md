@@ -6,6 +6,13 @@ Esempi di scripts per il data mining di grandi set di immagini
 - https://brew.sh  
 - Aprire il terminale 
 - Eseguire il codice presente sulla homepage di Homebrew
+  
+In caso di errore provare: 
+```
+echo "export PATH=/opt/homebrew/bin:$PATH" >> ~/.zshrc
+```
+
+
 
 ### Imagemagick 
 - https://imagemagick.org
