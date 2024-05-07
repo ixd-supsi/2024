@@ -105,9 +105,11 @@
                     Esempi di codice
                 </a></li>
             </ul>
+        </section>
 
-            <hr>
+        <hr>
 
+        <section>
             <p><br/>Elaborato 2<br/>Algoritmi</p>
             <br>
             <p class="brief">Progettare un'interfaccia web che mostri come ha avuto origine e come funziona un algoritmo. 
@@ -124,10 +126,51 @@
             </ul>
         </section>
 
+        <hr>
+
         <footer>
             <ul id="menu"></ul>
         </footer>
 
+        <script type="text/javascript">
+
+            function load_main_menu(){
+                const container = document.getElementById("menu");
+
+                const pages = [
+                    {
+                        "link": 2020
+                    },
+                    {
+                        "link": 2021
+                    },
+                    {
+                        "link": 2022
+                    },
+                    {
+                        "link": 2023
+                    },
+                    {
+                        "link": 2024
+                    }
+                ]
+
+                function compareByYear(a, b) {
+                    return b.link - a.link;
+                }
+
+                pages.sort(compareByYear)
+
+                for (let x = 0; x < pages.length; x++){
+                    container.innerHTML += "<li><a class='link' href=https://ixd-supsi.github.io/" + pages[x].link + ">" + pages[x].link +" </a></li>"
+                }                
+            }
+
+            document.addEventListener("DOMContentLoaded", function(){
+                load_main_menu()
+            });
+
+    </script>
+
     </body>
-    <script type="text/javascript" src="../2020/script/menu.js"></script>
 </html>
