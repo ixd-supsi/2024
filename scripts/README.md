@@ -12,8 +12,6 @@ In caso di errore provare:
 echo "export PATH=/opt/homebrew/bin:$PATH" >> ~/.zshrc
 ```
 
-
-
 ### Imagemagick 
 - https://imagemagick.org
 - Aprire il terminale 
@@ -22,3 +20,14 @@ echo "export PATH=/opt/homebrew/bin:$PATH" >> ~/.zshrc
 ### Node.js e NPM
 - https://nodejs.org
 - Scaricare e installare l’ultima versione di Node  
+
+
+
+
+#Imagemagick
+
+Ridmimensiona e converti le immagini di un’intera cartella: 
+```
+magick mogrify -verbose -resize 512x512 -format JPG -quality 80 -path ../img_512 *.*
+```
+
