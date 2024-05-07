@@ -15,7 +15,7 @@ echo "export PATH=/opt/homebrew/bin:$PATH" >> ~/.zshrc
 ### Imagemagick 
 - https://imagemagick.org
 - Aprire il terminale 
-- brew install Imagemagick
+- Eseguire ```brew install Imagemagick```
 
 ### Node.js e NPM
 - https://nodejs.org
