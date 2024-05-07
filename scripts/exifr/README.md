@@ -5,7 +5,7 @@
 /exifr     # cartella con questo script 
 ```
 
-Aprire il terminale nella cartella ``èxifr```
+Aprire il terminale nella cartella ```exifr```
 
 ### Prima esecuzione 
 ```
