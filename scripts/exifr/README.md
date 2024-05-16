@@ -1,3 +1,5 @@
+# Estrazione metadati da immagini
+
 ### Struttura cartelle 
 ```
 /img_orig  # cartella con le immagini originali 
