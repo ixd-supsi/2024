@@ -41,7 +41,6 @@ async function run(files, dir) {
 			FileName : path.parse(file).name,
 			Objects : detected_objs
 		})
-
 		num_oggetti_trovati += detected_objs.length
 	}
 
@@ -93,9 +92,9 @@ async function prepare_input(buf) {
  */
 
 async function run_model(model, input) {
-	input = new OnnxRuntime.Tensor(Float32Array.from(input),[1, 3, IMAGE_W, IMAGE_H])
-	const outputs = await model.run({images:input})
-	return outputs["output0"].data
+	const t = new OnnxRuntime.Tensor(Float32Array.from(input),[1, 3, IMAGE_W, IMAGE_H])
+	const outputs = await model.run({images:t})
+	return outputs
 }
 
 /**
@@ -104,21 +103,25 @@ async function run_model(model, input) {
  * @param output Raw output of YOLOv8 network
  * @param img_width Width of original image
  * @param img_height Height of original image
- * @returns Array of detected objects in a format [[x1,y1,x2,y2,object_type,probability],..]
+ * @returns Array of detected objects
  */
 function process_output(output, img_width, img_height) {
 	let boxes = [];
-	for (let index=0; index<8400; index++) {
+
+	const data = output.output0.data
+	const dim = output.output0.dims[2]
+
+	for (let index=0; index<dim; index++) {
 		const [class_id, prob] = [...Array(YOLO_CLASSES.length).keys()]
-			.map(col => [col, output[8400 * (col + 4) + index]])
+			.map(col => [col, data[dim * (col + 4) + index]])
 			.reduce((accum, item) => item[1]>accum[1] ? item : accum, [0,0]);
 		if (prob < PROB_THRESHOLD) continue
 
 		const label = YOLO_CLASSES[class_id]
-		const xc = output[index]
-		const yc = output[  8400+index]
-		const w  = output[2*8400+index]
-		const h  = output[3*8400+index]
+		const xc = data[index]
+		const yc = data[  dim+index]
+		const w  = data[2*dim+index]
+		const h  = data[3*dim+index]
 		const x1 = Math.floor((xc-w/2)/IMAGE_W*img_width)
 		const y1 = Math.floor((yc-h/2)/IMAGE_H*img_height)
 		const x2 = Math.floor((xc+w/2)/IMAGE_W*img_width)
@@ -138,8 +141,6 @@ function process_output(output, img_width, img_height) {
 /**
  * Function calculates "Intersection-over-union" coefficient for specified two boxes
  * https://pyimagesearch.com/2016/11/07/intersection-over-union-iou-for-object-detection/.
- * @param box1 First box in format: [x1,y1,x2,y2,object_class,probability]
- * @param box2 Second box in format: [x1,y1,x2,y2,object_class,probability]
  * @returns Intersection over union ratio as a float number
  */
 function iou(box1, box2) {
@@ -148,11 +149,6 @@ function iou(box1, box2) {
 
 /**
  * Function calculates union area of two boxes.
- *     :param box1: First box in format [x1,y1,x2,y2,object_class,probability]
- *     :param box2: Second box in format [x1,y1,x2,y2,object_class,probability]
- *     :return: Area of the boxes union as a float number
- * @param box1 First box in format [x1,y1,x2,y2,object_class,probability]
- * @param box2 Second box in format [x1,y1,x2,y2,object_class,probability]
  * @returns Area of the boxes union as a float number
  */
 function union(box1, box2) {
@@ -163,8 +159,6 @@ function union(box1, box2) {
 
 /**
  * Function calculates intersection area of two boxes
- * @param box1 First box in format [x1,y1,x2,y2,object_class,probability]
- * @param box2 Second box in format [x1,y1,x2,y2,object_class,probability]
  * @returns Area of intersection of the boxes as a float number
  */
 function intersection(box1,box2) {
