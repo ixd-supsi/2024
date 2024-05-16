@@ -37,3 +37,4 @@ settings.json
 !.vscode/extensions.json
 *.code-workspace
 .history/
+scripts/YOLO_detect/data_yolo.json
