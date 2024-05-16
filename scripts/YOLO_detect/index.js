@@ -15,7 +15,8 @@ const IMAGE_H = 640        // non cambiare per ora
 const OUTPUT = "data_yolo.json"
 
 // Percorso delle cartella delle immagini (relativo a questo script)
-const PATH = "../img_orig/"
+const PATH = "../img_orig/
+
 
 // Files da ignorare:
 const FILES_DA_IGNORARE = ['.DS_Store', '.AppleDouble', '.LSOverride']
@@ -35,7 +36,8 @@ async function run(files, dir) {
 
 	for (const file of files) {
 		const detected_objs = await detect_objects_on_image(MODEL, dir + file)
-		console.log("File: " + file + ", Oggetti: " + detected_objs.length)
+		const objs = detected_objs.map( o => o.label).join(', ')
+		console.log("File: " + file + " " + objs)
 		data.push({
 			FileExtension : path.extname(file),
 			FileName : path.parse(file).name,
