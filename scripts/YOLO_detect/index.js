@@ -2,7 +2,7 @@
 
 // https://huggingface.co/amd/yolov8m/resolve/main/yolov8m.onnx
 
-import OnnxRuntime from "onnxruntime-node"
+import OnnxRuntime from 'onnxruntime-node'
 import sharp from 'sharp'
 import fs from 'fs'
 import path from 'path'
@@ -15,14 +15,13 @@ const IMAGE_H = 640        // non cambiare per ora
 const OUTPUT = "data_yolo.json"
 
 // Percorso delle cartella delle immagini (relativo a questo script)
-const IMG_PATH = "../img_orig/
-
+const IMG_PATH = "../img_orig"
 
 // Files da ignorare:
 const FILES_DA_IGNORARE = ['.DS_Store', '.AppleDouble', '.LSOverride']
 
 // Elenco di tutti i files nella cartella PATH
-const files = fs.readdirSync(PATH).filter( e => FILES_DA_IGNORARE.indexOf(e) == -1);
+const files = fs.readdirSync(IMG_PATH).filter( e => FILES_DA_IGNORARE.indexOf(e) == -1);
 
 // Boot...
 run(files, IMG_PATH)
@@ -34,40 +33,39 @@ async function run(files, dir) {
 	const data = []
 	let num_oggetti_trovati = 0
 
+	// Inizio cronometro...
+	const t0 = (new Date()).getTime()
+
 	for (const file of files) {
-		const detected_objs = await detect_objects_on_image(MODEL, dir + file)
-		const objs = detected_objs.map( o => o.label).join(', ')
-		console.log("File: " + file + " " + objs)
+
+		const [input, img_width, img_height] = await prepare_input(path.join(dir, file))
+		const output = await run_model(MODEL, input)
+		const detected_objs = process_output(output, img_width, img_height)
+
+		console.log("File: " + file + " " + detected_objs.map( o => o.label).join(', '))
+
 		data.push({
+			ImageWidth    : img_width,
+			ImageHeight   : img_height,
 			FileExtension : path.extname(file),
-			FileName : path.parse(file).name,
-			Objects : detected_objs
+			FileName      : path.parse(file).name,
+			Objects       : detected_objs
 		})
 		num_oggetti_trovati += detected_objs.length
 	}
 
+	// ...fine cronometro
+	const t1 = (new Date()).getTime()
+
 	console.log()
+	console.log("Tempo impiegato: " + (t1 - t0) + "ms")
 	console.log("Numero di immagini analizzate: " + data.length)
 	console.log("Numero di oggetti identificati: " + num_oggetti_trovati)
-	console.log("Scrivo dati YOLO nel file: " + OUTPUT + "...")
-	fs.writeFileSync(OUTPUT, JSON.stringify(data, null, 4), 'utf8')
+	console.log("Scrivo dati nel file: " + OUTPUT + "...")
+	fs.writeFileSync(OUTPUT, JSON.stringify(data, null, 4), "utf8")
 	console.log("Fatto!")
 	console.log(":)")
 }
-
-async function detect_objects_on_image(model, buf) {
-	const [input, img_width, img_height] = await prepare_input(buf);
-	const output = await run_model(model, input);
-	return process_output(output, img_width, img_height);
-}
-
-/**
- * Function used to convert input image to tensor,
- * required as an input to YOLOv8 object detection
- * network.
- * @param buf Content of uploaded file
- * @returns Array of pixels
- */
 
 async function prepare_input(buf) {
 	const img = sharp(buf)
@@ -79,19 +77,13 @@ async function prepare_input(buf) {
 		.toBuffer()
 	const red = [], green = [], blue = []
 	for (let index=0; index<pixels.length; index+=3) {
-		red.push(pixels[index]/255.0);
-		green.push(pixels[index+1]/255.0);
-		blue.push(pixels[index+2]/255.0);
+		red.push(pixels[index]/255.0)
+		green.push(pixels[index+1]/255.0)
+		blue.push(pixels[index+2]/255.0)
 	}
-	const input = [...red, ...green, ...blue];
-	return [input, img_width, img_height];
+	const input = [...red, ...green, ...blue]
+	return [input, img_width, img_height]
 }
-
-/**
- * Function used to pass provided input tensor to YOLOv8 neural network and return result
- * @param input Input pixels array
- * @returns Raw output of neural network as a flat array of numbers
- */
 
 async function run_model(model, input) {
 	const t = new OnnxRuntime.Tensor(Float32Array.from(input),[1, 3, IMAGE_W, IMAGE_H])
@@ -99,16 +91,8 @@ async function run_model(model, input) {
 	return outputs
 }
 
-/**
- * Function used to convert RAW output from YOLOv8 to an array of detected objects.
- * Each object contain the bounding box of this object, the type of object and the probability
- * @param output Raw output of YOLOv8 network
- * @param img_width Width of original image
- * @param img_height Height of original image
- * @returns Array of detected objects
- */
 function process_output(output, img_width, img_height) {
-	let boxes = [];
+	let boxes = []
 
 	const data = output.output0.data
 	const dim = output.output0.dims[2]
@@ -128,14 +112,25 @@ function process_output(output, img_width, img_height) {
 		const y1 = Math.floor((yc-h/2)/IMAGE_H*img_height)
 		const x2 = Math.floor((xc+w/2)/IMAGE_W*img_width)
 		const y2 = Math.floor((yc+h/2)/IMAGE_H*img_height)
-		boxes.push({x1, y1, x2, y2, w:x2-x1, h: y2-y1, label, prob})
+		boxes.push({
+			box : {
+				x1,
+				y1,
+				x2,
+				y2,
+				w: x2 - x1,
+				h: y2 - y1,
+			},
+			label,
+			prob : Math.round(prob * 1000) / 10
+		})
 	}
 
 	boxes = boxes.sort((box1, box2) => box2.prob - box1.prob)
 	const result = []
-	while (boxes.length>0) {
-		result.push(boxes[0]);
-		boxes = boxes.filter(box => iou(boxes[0], box)<0.7);
+	while (boxes.length > 0) {
+		result.push(boxes[0])
+		boxes = boxes.filter(box => iou(boxes[0], box) < 0.7) // Threshold
 	}
 	return result
 }
