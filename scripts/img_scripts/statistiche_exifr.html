@@ -9,19 +9,19 @@
     <p>Apri la console per leggere le statistiche</p>
 
     <script>
-        const path_to_json = "exifr/data.json"
+        const path_to_json = "exif_extract/data.json"
         const occurrences = {};
 
         fetch(path_to_json)
             .then(res => res.json())
             .then(data => {
                 // console.log(data)
-            
+
                 for (const item of data) {
 
-                    if (item.ISO){
-                        let date = item.DateTimeOriginal
-                        let ISO = item.ISO
+                    if (item.EXIF.ISO){
+                        let date = item.EXIF.DateTimeOriginal
+                        let ISO = item.EXIF.ISO
 
                         let date_ = new Date(date);
                         const hour = date_.getHours();
@@ -32,11 +32,11 @@
                         } else {
                             occurrences[ISO] = 1;
                         }
-                    }    
+                    }
                 }
                 console.log(occurrences)
-            })  
-    
+            })
+
     </script>
 </body>
 </html>
