@@ -1,0 +1,24 @@
+{
+  "name": "face-api-test",
+  "version": "1.0",
+  "description": "Riconoscimento volti con FaceAPI",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@tensorflow/tfjs": "^4.16.0",
+    "@tensorflow/tfjs-backend-cpu": "^4.16.0",
+    "@tensorflow/tfjs-backend-wasm": "^4.16.0",
+    "@tensorflow/tfjs-backend-webgl": "^4.16.0",
+    "@tensorflow/tfjs-backend-webgpu": "4.16.0",
+    "@tensorflow/tfjs-converter": "^4.16.0",
+    "@tensorflow/tfjs-core": "^4.16.0",
+    "@tensorflow/tfjs-data": "^4.16.0",
+    "@tensorflow/tfjs-layers": "^4.16.0",
+    "@tensorflow/tfjs-node": "^4.16.0",
+    "@tensorflow/tfjs-node-gpu": "^4.16.0",
+    "@vladmandic/face-api": "^1.7.1"
+  }
+}
