@@ -1,0 +1,531 @@
+[
+    {
+        "ImageWidth": 512,
+        "ImageHeight": 384,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_2742",
+        "Faces": []
+    },
+    {
+        "ImageWidth": 512,
+        "ImageHeight": 384,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_2743",
+        "Faces": []
+    },
+    {
+        "ImageWidth": 512,
+        "ImageHeight": 512,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_2774",
+        "Faces": []
+    },
+    {
+        "ImageWidth": 512,
+        "ImageHeight": 384,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_3062",
+        "Faces": []
+    },
+    {
+        "ImageWidth": 512,
+        "ImageHeight": 384,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_3118",
+        "Faces": []
+    },
+    {
+        "ImageWidth": 512,
+        "ImageHeight": 384,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_3188",
+        "Faces": []
+    },
+    {
+        "ImageWidth": 384,
+        "ImageHeight": 512,
+        "FileExtension": ".jpg",
+        "FileName": "_AWJF1281",
+        "Faces": [
+            {
+                "box": {
+                    "x1": 178,
+                    "y1": 162,
+                    "x2": 217,
+                    "y2": 192,
+                    "w": 39,
+                    "h": 30
+                },
+                "confidence": 94.3,
+                "gender": "female",
+                "genderConfidence": 85.8,
+                "age": 11.8,
+                "expression": "neutral",
+                "expressionConfidence": 67.3
+            }
+        ]
+    },
+    {
+        "ImageWidth": 680,
+        "ImageHeight": 662,
+        "FileExtension": ".jpg",
+        "FileName": "_FOIQVN9XMB0UYyS",
+        "Faces": []
+    },
+    {
+        "ImageWidth": 1125,
+        "ImageHeight": 1027,
+        "FileExtension": ".jpg",
+        "FileName": "_PHOTO-2024-02-28-14-28-44",
+        "Faces": [
+            {
+                "box": {
+                    "x1": 382,
+                    "y1": 132,
+                    "x2": 516,
+                    "y2": 263,
+                    "w": 134,
+                    "h": 130
+                },
+                "confidence": 94.8,
+                "gender": "female",
+                "genderConfidence": 85.8,
+                "age": 23.7,
+                "expression": "neutral",
+                "expressionConfidence": 52.8
+            },
+            {
+                "box": {
+                    "x1": 671,
+                    "y1": 95,
+                    "x2": 809,
+                    "y2": 229,
+                    "w": 137,
+                    "h": 134
+                },
+                "confidence": 91,
+                "gender": "male",
+                "genderConfidence": 93.6,
+                "age": 35.4,
+                "expression": "happy",
+                "expressionConfidence": 100
+            },
+            {
+                "box": {
+                    "x1": 248,
+                    "y1": 31,
+                    "x2": 335,
+                    "y2": 116,
+                    "w": 86,
+                    "h": 85
+                },
+                "confidence": 89.3,
+                "gender": "male",
+                "genderConfidence": 87.6,
+                "age": 23.3,
+                "expression": "surprised",
+                "expressionConfidence": 57.1
+            }
+        ]
+    },
+    {
+        "ImageWidth": 1920,
+        "ImageHeight": 1280,
+        "FileExtension": ".jpg",
+        "FileName": "sample1",
+        "Faces": [
+            {
+                "box": {
+                    "x1": 393,
+                    "y1": 410,
+                    "x2": 609,
+                    "y2": 609,
+                    "w": 216,
+                    "h": 199
+                },
+                "confidence": 99.5,
+                "gender": "female",
+                "genderConfidence": 94.4,
+                "age": 24.5,
+                "expression": "happy",
+                "expressionConfidence": 74.2
+            },
+            {
+                "box": {
+                    "x1": 812,
+                    "y1": 452,
+                    "x2": 1048,
+                    "y2": 669,
+                    "w": 236,
+                    "h": 217
+                },
+                "confidence": 99.3,
+                "gender": "female",
+                "genderConfidence": 94.8,
+                "age": 27.7,
+                "expression": "sad",
+                "expressionConfidence": 79.3
+            },
+            {
+                "box": {
+                    "x1": 1452,
+                    "y1": 227,
+                    "x2": 1671,
+                    "y2": 450,
+                    "w": 219,
+                    "h": 223
+                },
+                "confidence": 98.8,
+                "gender": "female",
+                "genderConfidence": 95.7,
+                "age": 28.7,
+                "expression": "happy",
+                "expressionConfidence": 100
+            }
+        ]
+    },
+    {
+        "ImageWidth": 1920,
+        "ImageHeight": 1367,
+        "FileExtension": ".jpg",
+        "FileName": "sample2",
+        "Faces": [
+            {
+                "box": {
+                    "x1": 1425,
+                    "y1": 185,
+                    "x2": 1664,
+                    "y2": 412,
+                    "w": 238,
+                    "h": 227
+                },
+                "confidence": 98.8,
+                "gender": "female",
+                "genderConfidence": 98,
+                "age": 19.7,
+                "expression": "sad",
+                "expressionConfidence": 98
+            },
+            {
+                "box": {
+                    "x1": 888,
+                    "y1": 289,
+                    "x2": 1068,
+                    "y2": 427,
+                    "w": 180,
+                    "h": 137
+                },
+                "confidence": 89.1,
+                "gender": "female",
+                "genderConfidence": 99.1,
+                "age": 19.3,
+                "expression": "sad",
+                "expressionConfidence": 100
+            },
+            {
+                "box": {
+                    "x1": 323,
+                    "y1": 192,
+                    "x2": 522,
+                    "y2": 389,
+                    "w": 199,
+                    "h": 196
+                },
+                "confidence": 76.6,
+                "gender": "female",
+                "genderConfidence": 94,
+                "age": 18.4,
+                "expression": "disgusted",
+                "expressionConfidence": 60.9
+            }
+        ]
+    },
+    {
+        "ImageWidth": 1920,
+        "ImageHeight": 1350,
+        "FileExtension": ".jpg",
+        "FileName": "sample3",
+        "Faces": [
+            {
+                "box": {
+                    "x1": 563,
+                    "y1": 372,
+                    "x2": 813,
+                    "y2": 615,
+                    "w": 250,
+                    "h": 242
+                },
+                "confidence": 98.9,
+                "gender": "female",
+                "genderConfidence": 93.6,
+                "age": 29.3,
+                "expression": "neutral",
+                "expressionConfidence": 55.2
+            },
+            {
+                "box": {
+                    "x1": 1467,
+                    "y1": 347,
+                    "x2": 1713,
+                    "y2": 589,
+                    "w": 245,
+                    "h": 242
+                },
+                "confidence": 96.4,
+                "gender": "female",
+                "genderConfidence": 97.4,
+                "age": 27,
+                "expression": "happy",
+                "expressionConfidence": 100
+            },
+            {
+                "box": {
+                    "x1": 1037,
+                    "y1": 256,
+                    "x2": 1320,
+                    "y2": 528,
+                    "w": 283,
+                    "h": 272
+                },
+                "confidence": 59.8,
+                "gender": "female",
+                "genderConfidence": 87,
+                "age": 37.7,
+                "expression": "happy",
+                "expressionConfidence": 100
+            }
+        ]
+    },
+    {
+        "ImageWidth": 1920,
+        "ImageHeight": 1448,
+        "FileExtension": ".jpg",
+        "FileName": "sample4",
+        "Faces": [
+            {
+                "box": {
+                    "x1": 634,
+                    "y1": 94,
+                    "x2": 863,
+                    "y2": 318,
+                    "w": 229,
+                    "h": 224
+                },
+                "confidence": 98.4,
+                "gender": "female",
+                "genderConfidence": 96.3,
+                "age": 29.4,
+                "expression": "neutral",
+                "expressionConfidence": 79.8
+            },
+            {
+                "box": {
+                    "x1": 237,
+                    "y1": 230,
+                    "x2": 443,
+                    "y2": 433,
+                    "w": 205,
+                    "h": 203
+                },
+                "confidence": 97.3,
+                "gender": "female",
+                "genderConfidence": 95.4,
+                "age": 28.2,
+                "expression": "sad",
+                "expressionConfidence": 65.4
+            },
+            {
+                "box": {
+                    "x1": 963,
+                    "y1": 225,
+                    "x2": 1172,
+                    "y2": 422,
+                    "w": 208,
+                    "h": 197
+                },
+                "confidence": 95.3,
+                "gender": "female",
+                "genderConfidence": 88.8,
+                "age": 21.5,
+                "expression": "neutral",
+                "expressionConfidence": 65.3
+            },
+            {
+                "box": {
+                    "x1": 1238,
+                    "y1": 180,
+                    "x2": 1443,
+                    "y2": 396,
+                    "w": 205,
+                    "h": 216
+                },
+                "confidence": 72.4,
+                "gender": "female",
+                "genderConfidence": 90.3,
+                "age": 35.4,
+                "expression": "happy",
+                "expressionConfidence": 100
+            }
+        ]
+    },
+    {
+        "ImageWidth": 1920,
+        "ImageHeight": 1398,
+        "FileExtension": ".jpg",
+        "FileName": "sample5",
+        "Faces": [
+            {
+                "box": {
+                    "x1": 764,
+                    "y1": 136,
+                    "x2": 963,
+                    "y2": 335,
+                    "w": 199,
+                    "h": 198
+                },
+                "confidence": 99.3,
+                "gender": "female",
+                "genderConfidence": 87.6,
+                "age": 33.7,
+                "expression": "neutral",
+                "expressionConfidence": 63.6
+            },
+            {
+                "box": {
+                    "x1": 1087,
+                    "y1": 240,
+                    "x2": 1294,
+                    "y2": 449,
+                    "w": 207,
+                    "h": 209
+                },
+                "confidence": 97.7,
+                "gender": "female",
+                "genderConfidence": 94,
+                "age": 31.8,
+                "expression": "happy",
+                "expressionConfidence": 99.9
+            },
+            {
+                "box": {
+                    "x1": 578,
+                    "y1": 461,
+                    "x2": 793,
+                    "y2": 678,
+                    "w": 215,
+                    "h": 216
+                },
+                "confidence": 94.3,
+                "gender": "female",
+                "genderConfidence": 93.9,
+                "age": 23.9,
+                "expression": "happy",
+                "expressionConfidence": 99.9
+            },
+            {
+                "box": {
+                    "x1": 1386,
+                    "y1": 440,
+                    "x2": 1598,
+                    "y2": 671,
+                    "w": 211,
+                    "h": 231
+                },
+                "confidence": 93.9,
+                "gender": "female",
+                "genderConfidence": 96.1,
+                "age": 35.9,
+                "expression": "happy",
+                "expressionConfidence": 73.9
+            },
+            {
+                "box": {
+                    "x1": 341,
+                    "y1": 920,
+                    "x2": 587,
+                    "y2": 1179,
+                    "w": 245,
+                    "h": 258
+                },
+                "confidence": 90.4,
+                "gender": "female",
+                "genderConfidence": 90.2,
+                "age": 41.1,
+                "expression": "happy",
+                "expressionConfidence": 100
+            }
+        ]
+    },
+    {
+        "ImageWidth": 1920,
+        "ImageHeight": 1537,
+        "FileExtension": ".jpg",
+        "FileName": "sample6",
+        "Faces": [
+            {
+                "box": {
+                    "x1": 646,
+                    "y1": 384,
+                    "x2": 887,
+                    "y2": 638,
+                    "w": 241,
+                    "h": 253
+                },
+                "confidence": 95.1,
+                "gender": "female",
+                "genderConfidence": 99.3,
+                "age": 18.7,
+                "expression": "happy",
+                "expressionConfidence": 99.9
+            },
+            {
+                "box": {
+                    "x1": 1143,
+                    "y1": 376,
+                    "x2": 1393,
+                    "y2": 591,
+                    "w": 249,
+                    "h": 214
+                },
+                "confidence": 94.8,
+                "gender": "female",
+                "genderConfidence": 98.5,
+                "age": 23.4,
+                "expression": "neutral",
+                "expressionConfidence": 100
+            },
+            {
+                "box": {
+                    "x1": 1452,
+                    "y1": 307,
+                    "x2": 1720,
+                    "y2": 574,
+                    "w": 268,
+                    "h": 266
+                },
+                "confidence": 92.4,
+                "gender": "female",
+                "genderConfidence": 97.5,
+                "age": 35.6,
+                "expression": "happy",
+                "expressionConfidence": 99.9
+            },
+            {
+                "box": {
+                    "x1": 223,
+                    "y1": 531,
+                    "x2": 484,
+                    "y2": 773,
+                    "w": 261,
+                    "h": 241
+                },
+                "confidence": 85.8,
+                "gender": "female",
+                "genderConfidence": 98.9,
+                "age": 19.7,
+                "expression": "happy",
+                "expressionConfidence": 100
+            }
+        ]
+    }
+]
