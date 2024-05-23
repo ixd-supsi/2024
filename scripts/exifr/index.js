@@ -3,7 +3,7 @@ import fs from 'fs'
 import path from 'path'
 
 // Nome del file per il salvataggio dei dati
-const OUTPUT = "data.json"
+const OUTPUT = "data_exif.json"
 
 // Percorso delle cartella delle immagini (relativo a questo script)
 const PATH = "../img_orig/"
