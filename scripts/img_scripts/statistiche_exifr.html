@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statistiche immagini</title>
+</head>
+<body>
+    <p>Apri la console per leggere le statistiche</p>
+
+    <script>
+        const path_to_json = "exifr/data.json"
+        const hourOccurrences = {};
+
+        fetch(path_to_json)
+            .then(res => res.json())
+            .then(data => {
+                // console.log(data)
+            
+                for (const item of data) {
+
+                    if (item.DateTimeOriginal){
+                        let date = item.DateTimeOriginal
+
+                        let date_ = new Date(date);
+                        const hour = date_.getHours();
+                        // const minute = date_.getMinutes();
+
+                        if (hourOccurrences[hour]) {
+                            hourOccurrences[hour]++;
+                        } else {
+                            hourOccurrences[hour] = 1;
+                        }
+                    }    
+                }
+                console.log(hourOccurrences)
+            })  
+    
+    </script>
+</body>
+</html>
