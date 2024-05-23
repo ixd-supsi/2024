@@ -15,7 +15,7 @@ const IMAGE_H = 640        // non cambiare per ora
 const OUTPUT = "data_yolo.json"
 
 // Percorso delle cartella delle immagini (relativo a questo script)
-const PATH = "../img_orig/
+const IMG_PATH = "../img_orig/
 
 
 // Files da ignorare:
@@ -25,7 +25,7 @@ const FILES_DA_IGNORARE = ['.DS_Store', '.AppleDouble', '.LSOverride']
 const files = fs.readdirSync(PATH).filter( e => FILES_DA_IGNORARE.indexOf(e) == -1);
 
 // Boot...
-run(files, PATH)
+run(files, IMG_PATH)
 
 async function run(files, dir) {
 	const SESSION_OPTS = { executionProviders: ['cpu'] }
