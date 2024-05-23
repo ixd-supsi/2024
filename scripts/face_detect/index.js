@@ -10,8 +10,7 @@ const MAX_RESULTS = 50
 const OUTPUT = "data_faces.json"
 
 // Percorso delle cartella delle immagini (relativo a questo script)
-// const IMG_PATH = "../img_orig/"
-const IMG_PATH = "/Users/andreas/Desktop/img_512_sel/"
+const IMG_PATH = "../img_orig/"
 
 // Files da ignorare:
 const FILES_DA_IGNORARE = ['.DS_Store', '.AppleDouble', '.LSOverride']
@@ -50,7 +49,6 @@ async function run(files, img_path, model_path) {
 		const result = await detect(tensor, optionsSSDMobileNet)
 		const Faces = result.map(getFormattedData)
 
-		console.log(tensor.shape)
 
 		// print
 		console.log('File: ' + file + ', numero di volti: '+ result.length)
@@ -64,10 +62,10 @@ async function run(files, img_path, model_path) {
 		}
 
 		data.push({
-			ImageWidth : tensor.shape[2],
-			ImageHeight : tensor.shape[1],
+			ImageWidth    : tensor.shape[2], // TODO: invertiti?
+			ImageHeight   : tensor.shape[1],
 			FileExtension : path.extname(file),
-			FileName : path.parse(file).name,
+			FileName      : path.parse(file).name,
 			Faces
 		})
 		num_volti_trovati += result.length
