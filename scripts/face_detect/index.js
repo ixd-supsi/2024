@@ -1,4 +1,3 @@
-
 import { tidy } from '@tensorflow/tfjs-node' // in nodejs environments tfjs-node is required to be loaded before face-api
 import { tf as TF, detectAllFaces, version, nets, SsdMobilenetv1Options } from '@vladmandic/face-api' // use this when face-api is installed as module (majority of use cases)
 import fs from 'fs'
@@ -23,7 +22,6 @@ const files = fs.readdirSync(IMG_PATH).filter( e => FILES_DA_IGNORARE.indexOf(e)
 const MODEL_PATH = './model/'
 
 run(files, IMG_PATH, MODEL_PATH)
-
 
 async function run(files, img_path, model_path) {
 
