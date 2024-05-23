@@ -38,3 +38,4 @@ settings.json
 *.code-workspace
 .history/
 scripts/YOLO_detect/data_yolo.json
+scripts/face_detect/data_faces.json
