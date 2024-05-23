@@ -10,7 +10,7 @@
 
     <script>
         const path_to_json = "exifr/data.json"
-        const hourOccurrences = {};
+        const occurrences = {};
 
         fetch(path_to_json)
             .then(res => res.json())
@@ -19,21 +19,22 @@
             
                 for (const item of data) {
 
-                    if (item.DateTimeOriginal){
+                    if (item.ISO){
                         let date = item.DateTimeOriginal
+                        let ISO = item.ISO
 
                         let date_ = new Date(date);
                         const hour = date_.getHours();
                         // const minute = date_.getMinutes();
 
-                        if (hourOccurrences[hour]) {
-                            hourOccurrences[hour]++;
+                        if (occurrences[ISO]) {
+                            occurrences[ISO]++;
                         } else {
-                            hourOccurrences[hour] = 1;
+                            occurrences[ISO] = 1;
                         }
                     }    
                 }
-                console.log(hourOccurrences)
+                console.log(occurrences)
             })  
     
     </script>
