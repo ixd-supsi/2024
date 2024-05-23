@@ -79,7 +79,7 @@ async function run(files, img_path, model_path) {
 	const t1 = (new Date()).getTime()
 
 	console.log()
-	console.log("Tempo impiegato: " + (t1 - t0) + 'ms')
+	console.log("Tempo impiegato: " + (t1 - t0) + "ms")
 	console.log("Numero di immagini analizzate: " + data.length)
 	console.log("Numero di volti identificati: " + num_volti_trovati)
 	console.log("Scrivo dati nel file: " + OUTPUT + "...")
