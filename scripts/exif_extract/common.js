@@ -30,7 +30,7 @@ export function scanFolder(path) {
 // 	try {
 // 		if (cropSize) {
 // 			img.clone().extract(box)
-// 			   .resize(cropSize)
+// 			   .resize(cropSize, cropSize, {fit: 'inside'})
 // 			   .rotate()
 // 			   .toFile(savePath)
 
