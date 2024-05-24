@@ -16,7 +16,7 @@
         const occurrences = {};
 
         output_container = document.getElementById('output')
-        let ouput = ''
+        let output = ''
 
         fetch(path_to_json)
             .then(res => res.json())
@@ -42,22 +42,22 @@
                 }
                 console.log(occurrences)
 
-                ouput += '<table>'
+                output += '<table>'
 
                 for (const key in occurrences) {
                     if (data.hasOwnProperty(key)) {
 
-                        ouput += '<tr>'
-                        ouput += '<td>' + key + '</td>'
-                        ouput += '<td>' + occurrences[key] + '</td>'
+                        output += '<tr>'
+                        output += '<td>' + key + '</td>'
+                        output += '<td>' + occurrences[key] + '</td>'
                         output += '</tr>'
 
                     }
                 }
 
-                ouput += '</table>'
+                output += '</table>'
                 
-                output_container.innerHTML = ouput
+                output_container.innerHTML = output
             })
 
     </script>
