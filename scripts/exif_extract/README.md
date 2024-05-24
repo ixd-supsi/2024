@@ -1,18 +1,14 @@
 # Estrazione metadati da immagini
 
-### Struttura cartelle 
-```
-/img_orig  # cartella con le immagini originali 
-/img_512   # cartella con le immagini ridimensionate 
-/exifr     # cartella con questo script 
-```
 
-Aprire il terminale nella cartella ```exifr```
+Aprire il terminale nella cartella ```exifr_extract```
 
 ### Prima esecuzione 
 ```
 npm install
 ```
+Assicurarsi che il file ```common/image_path.cfg``` contenga il percorso **assoluto** alla cartella delle immagini da analizzare
+
 
 ### Esecuzione script 
 ```
