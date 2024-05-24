@@ -2,10 +2,10 @@ import fs from 'fs'
 import path from 'path'
 import { scanFolder, getImagePath, loadSharpImage, cropAndSaveSharpImage } from './common.js'
 
-const OUTPUT_SIZE    = 256
-const IMG_PATH       = getImagePath()    // percorso delle cartella delle immagini (relativo a questo script)
-const CROP_PATH      = path.join(IMG_PATH, "..", "img_" + OUTPUT_SIZE)
-const JSON_PATH      = path.join(IMG_PATH, "..", "data_images.json") // Nome del file per il salvataggio dei dati
+const OUTPUT_SIZE  = 256
+const IMG_PATH     = getImagePath() // percorso delle cartella delle immagini (relativo a questo script)
+const CROP_PATH    = path.join(IMG_PATH, "..", "img_" + OUTPUT_SIZE)
+const JSON_PATH    = path.join(IMG_PATH, "..", "data_images.json") // Nome del file per il salvataggio dei dati
 
 run()
 
@@ -103,16 +103,3 @@ async function detect(tensor, opts) {
 		return []
 	}
 }
-
-// function detectPromise(tensor, opts) {
-// 	return new Promise((resolve) => detectAllFaces(tensor, opts)
-// 		// .withFaceLandmarks()
-// 		.withFaceExpressions()
-// 		.withFaceDescriptors()
-// 		.withAgeAndGender()
-// 		.then((res) => resolve(res))
-// 		.catch((err) => {
-// 			console.log('Caught error', err.message)
-// 			resolve([])
-// 		}))
-// }
