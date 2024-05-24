@@ -2,7 +2,7 @@ import fs from 'fs'
 import path from 'path'
 import { scanFolder, getImagePath, loadSharpImage, cropAndSaveSharpImage } from './common.js'
 
-const OUTPUT_SIZE  = 1024
+const OUTPUT_SIZE  = 512
 const IMG_PATH     = getImagePath()
 const CROP_PATH    = path.join(IMG_PATH, "..", "img_" + OUTPUT_SIZE)
 const JSON_PATH    = path.join(IMG_PATH, "..", "data_images.json") // Nome del file per il salvataggio dei dati

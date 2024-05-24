@@ -1,0 +1,365 @@
+[
+    {
+        "ImageWidth": 3000,
+        "ImageHeight": 4000,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230422_095605",
+        "Faces": []
+    },
+    {
+        "ImageWidth": 3264,
+        "ImageHeight": 2448,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230422_100051",
+        "Faces": [
+            {
+                "box": {
+                    "x1": 2642,
+                    "y1": 752,
+                    "x2": 2687,
+                    "y2": 795,
+                    "w": 45,
+                    "h": 43
+                },
+                "confidence": 57.3,
+                "gender": "male",
+                "genderConfidence": 94.6,
+                "age": 40.1,
+                "expression": "neutral",
+                "expressionConfidence": 98.4
+            }
+        ]
+    },
+    {
+        "ImageWidth": 3000,
+        "ImageHeight": 4000,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230422_100321",
+        "Faces": []
+    },
+    {
+        "ImageWidth": 3000,
+        "ImageHeight": 4000,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230422_100429",
+        "Faces": []
+    },
+    {
+        "ImageWidth": 3000,
+        "ImageHeight": 4000,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230422_101430",
+        "Faces": []
+    },
+    {
+        "ImageWidth": 3000,
+        "ImageHeight": 4000,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230422_101606",
+        "Faces": []
+    },
+    {
+        "ImageWidth": 3000,
+        "ImageHeight": 4000,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230422_102350",
+        "Faces": [
+            {
+                "box": {
+                    "x1": 2228,
+                    "y1": 129,
+                    "x2": 2457,
+                    "y2": 370,
+                    "w": 229,
+                    "h": 240
+                },
+                "confidence": 55.2,
+                "gender": "male",
+                "genderConfidence": 90.9,
+                "age": 32.1,
+                "expression": "happy",
+                "expressionConfidence": 65.5
+            }
+        ]
+    },
+    {
+        "ImageWidth": 3264,
+        "ImageHeight": 2448,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230422_105013",
+        "Faces": []
+    },
+    {
+        "ImageWidth": 3264,
+        "ImageHeight": 2448,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230422_110023",
+        "Faces": []
+    },
+    {
+        "ImageWidth": 3000,
+        "ImageHeight": 4000,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230422_112337",
+        "Faces": [
+            {
+                "box": {
+                    "x1": 2685,
+                    "y1": 1556,
+                    "x2": 2828,
+                    "y2": 1691,
+                    "w": 143,
+                    "h": 134
+                },
+                "confidence": 99.1,
+                "gender": "male",
+                "genderConfidence": 97.5,
+                "age": 60.9,
+                "expression": "neutral",
+                "expressionConfidence": 95.5
+            }
+        ]
+    },
+    {
+        "ImageWidth": 3000,
+        "ImageHeight": 4000,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230422_112355",
+        "Faces": []
+    },
+    {
+        "ImageWidth": 3264,
+        "ImageHeight": 2448,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230422_113337",
+        "Faces": []
+    },
+    {
+        "ImageWidth": 4000,
+        "ImageHeight": 3000,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230513_141521",
+        "Faces": [
+            {
+                "box": {
+                    "x1": 810,
+                    "y1": 2030,
+                    "x2": 918,
+                    "y2": 2129,
+                    "w": 107,
+                    "h": 98
+                },
+                "confidence": 68.6,
+                "gender": "male",
+                "genderConfidence": 96.3,
+                "age": 43.8,
+                "expression": "disgusted",
+                "expressionConfidence": 58.7
+            }
+        ]
+    },
+    {
+        "ImageWidth": 3000,
+        "ImageHeight": 4000,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230513_150102",
+        "Faces": []
+    },
+    {
+        "ImageWidth": 3000,
+        "ImageHeight": 4000,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230516_165735",
+        "Faces": [
+            {
+                "box": {
+                    "x1": 1446,
+                    "y1": 2642,
+                    "x2": 1599,
+                    "y2": 2792,
+                    "w": 153,
+                    "h": 149
+                },
+                "confidence": 96.9,
+                "gender": "male",
+                "genderConfidence": 91.3,
+                "age": 20.3,
+                "expression": "neutral",
+                "expressionConfidence": 79.1
+            },
+            {
+                "box": {
+                    "x1": 628,
+                    "y1": 2064,
+                    "x2": 740,
+                    "y2": 2158,
+                    "w": 112,
+                    "h": 93
+                },
+                "confidence": 96.8,
+                "gender": "male",
+                "genderConfidence": 71.6,
+                "age": 40.4,
+                "expression": "happy",
+                "expressionConfidence": 99.4
+            },
+            {
+                "box": {
+                    "x1": 595,
+                    "y1": 2729,
+                    "x2": 682,
+                    "y2": 2819,
+                    "w": 86,
+                    "h": 90
+                },
+                "confidence": 95.8,
+                "gender": "male",
+                "genderConfidence": 72.7,
+                "age": 32.4,
+                "expression": "neutral",
+                "expressionConfidence": 99.9
+            },
+            {
+                "box": {
+                    "x1": 1188,
+                    "y1": 2101,
+                    "x2": 1297,
+                    "y2": 2204,
+                    "w": 108,
+                    "h": 103
+                },
+                "confidence": 85.4,
+                "gender": "female",
+                "genderConfidence": 93.7,
+                "age": 26.4,
+                "expression": "sad",
+                "expressionConfidence": 81
+            },
+            {
+                "box": {
+                    "x1": 683,
+                    "y1": 1335,
+                    "x2": 742,
+                    "y2": 1387,
+                    "w": 59,
+                    "h": 52
+                },
+                "confidence": 85.3,
+                "gender": "male",
+                "genderConfidence": 97.4,
+                "age": 30.6,
+                "expression": "neutral",
+                "expressionConfidence": 91.7
+            },
+            {
+                "box": {
+                    "x1": 625,
+                    "y1": 149,
+                    "x2": 711,
+                    "y2": 221,
+                    "w": 85,
+                    "h": 72
+                },
+                "confidence": 69.3,
+                "gender": "male",
+                "genderConfidence": 91.8,
+                "age": 49.2,
+                "expression": "neutral",
+                "expressionConfidence": 98.7
+            },
+            {
+                "box": {
+                    "x1": 1467,
+                    "y1": 2139,
+                    "x2": 1537,
+                    "y2": 2203,
+                    "w": 70,
+                    "h": 64
+                },
+                "confidence": 51.6,
+                "gender": "male",
+                "genderConfidence": 84.6,
+                "age": 29.2,
+                "expression": "sad",
+                "expressionConfidence": 100
+            }
+        ]
+    },
+    {
+        "ImageWidth": 4000,
+        "ImageHeight": 3000,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230520_145529",
+        "Faces": []
+    },
+    {
+        "ImageWidth": 3000,
+        "ImageHeight": 4000,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230603_170350",
+        "Faces": [
+            {
+                "box": {
+                    "x1": 2689,
+                    "y1": 2833,
+                    "x2": 2842,
+                    "y2": 2976,
+                    "w": 152,
+                    "h": 143
+                },
+                "confidence": 88.4,
+                "gender": "female",
+                "genderConfidence": 94.2,
+                "age": 24.3,
+                "expression": "happy",
+                "expressionConfidence": 52.8
+            },
+            {
+                "box": {
+                    "x1": 1024,
+                    "y1": 3060,
+                    "x2": 1295,
+                    "y2": 3340,
+                    "w": 271,
+                    "h": 280
+                },
+                "confidence": 70.6,
+                "gender": "male",
+                "genderConfidence": 55.3,
+                "age": 33.2,
+                "expression": "happy",
+                "expressionConfidence": 68.5
+            },
+            {
+                "box": {
+                    "x1": 1885,
+                    "y1": 2337,
+                    "x2": 1986,
+                    "y2": 2445,
+                    "w": 101,
+                    "h": 108
+                },
+                "confidence": 56.1,
+                "gender": "male",
+                "genderConfidence": 88.2,
+                "age": 32.4,
+                "expression": "neutral",
+                "expressionConfidence": 55.2
+            }
+        ]
+    },
+    {
+        "ImageWidth": 3000,
+        "ImageHeight": 4000,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230607_202239",
+        "Faces": []
+    },
+    {
+        "ImageWidth": 2448,
+        "ImageHeight": 3264,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230610_174318",
+        "Faces": []
+    }
+]

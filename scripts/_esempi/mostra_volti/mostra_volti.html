@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statistiche immagini</title>
+</head>
+<body>
+
+    <div id="box"></div>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+
+    <script>
+        const path_to_json = "dati/data.json"
+        // const path_to_json = "YOLO_detect/data_yolo_old.json"
+
+        let count_images = 0
+        let count_nofeat_img = 0
+        let count_features = 0
+
+        const labelOccurrences = {};
+
+        let output = ''
+
+
+        function getResizedDimensions(originalWidth, originalHeight, maxWidth, maxHeight) {
+            let width = originalWidth;
+            let height = originalHeight;
+
+            if (width > maxWidth) {
+                height = height * (maxWidth / width);
+                width = maxWidth;
+            }
+
+            if (height > maxHeight) {
+                width = width * (maxHeight / height);
+                height = maxHeight;
+            }
+
+            return { width, height };
+        }
+
+        function load_imgs(){
+
+            fetch(path_to_json)
+                .then(res => res.json())
+                .then(data => {
+                    // console.log(data)
+
+                    let path = 'images/'
+
+                    function loadImage(src, callback) {
+                        const img = new Image();
+                        img.onload = () => callback(img);
+                        img.src = src;
+                    }
+
+                    let x = 0;
+                    let y = 0;
+                    let height = canvas.offsetHeight
+                    let width = canvas.offsetWidth
+
+                    let n_elem = 6
+                    let size = width / n_elem
+                    
+                    let index = 0;
+
+                    // display faces
+                    for (const item of data) {
+
+                        if(item.Faces && item.Faces.length > 0){
+
+                            
+                            for (const person of item.Faces) {
+                                // console.log(person)                        
+
+                                let file = path + item.FileName + item.FileExtension
+
+                                loadImage(file, (img) => {
+
+                                    const bBox = person.box
+                                    console.log(bBox)
+
+                                    // definisco la posizione verticale e orizzontale
+                                    x = (index % n_elem) * size;
+                                    y = Math.floor(index / n_elem) * size;
+
+                                    ctx.drawImage(
+                                        img,
+                                        bBox.x1, bBox.y1, 
+                                        bBox.w, bBox.h, 
+                                        x, y, 
+                                        size, size
+                                        // getResizedDimensions(bBox.w, bBox.h, size, size).width, getResizedDimensions(bBox.w, bBox.h, size, size).height
+                                    );
+                                    
+                                    // ctx.fillText(item.FileName, x, y)
+                                    
+                                    index++;
+                                });
+                            }
+                        }
+                    }
+                })  
+        }
+
+
+    document.addEventListener('DOMContentLoaded', () => {
+        w = window.innerWidth;
+
+        box = document.getElementById("box")
+
+        canvas = document.createElement('canvas');
+        canvas.id = 'myCanvas';
+        canvas.width = w;
+        canvas.height = 600;
+
+        box.appendChild(canvas);
+        ctx = canvas.getContext('2d');
+
+
+        load_imgs()
+
+    });
+
+    </script>
+</body>
+</html>
