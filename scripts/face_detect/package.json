@@ -19,6 +19,7 @@
     "@tensorflow/tfjs-layers": "^4.16.0",
     "@tensorflow/tfjs-node": "^4.16.0",
     "@tensorflow/tfjs-node-gpu": "^4.16.0",
-    "@vladmandic/face-api": "^1.7.1"
+    "@vladmandic/face-api": "^1.7.1",
+    "sharp": "^0.33.4"
   }
 }
