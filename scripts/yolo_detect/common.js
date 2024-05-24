@@ -30,7 +30,7 @@ export async function cropAndSaveSharpImage(img, box, savePath, cropSize = null)
 	try {
 		if (cropSize) {
 			img.clone().extract(box)
-			   .resize(cropSize)
+			   .resize(cropSize, cropSize, {fit: 'inside'})
 			   .rotate()
 			   .toFile(savePath)
 
