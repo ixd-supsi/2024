@@ -1,35 +1,29 @@
-
-
+// TODO: caricare il modell dinamicamente
 // https://huggingface.co/amd/yolov8m/resolve/main/yolov8m.onnx
 
 import OnnxRuntime from 'onnxruntime-node'
-import sharp from 'sharp'
 import fs from 'fs'
 import path from 'path'
+import { scanFolder, getImagePath, loadSharpImage, cropAndSaveSharpImage } from './common.js'
 
-const PROB_THRESHOLD = 0.5 // thresold per detect di un oggetto
-const IMAGE_W = 640        // non cambiare per ora
-const IMAGE_H = 640        // non cambiare per ora
+const IMG_PATH       = getImagePath()    // percorso delle cartella delle immagini (relativo a questo script)
+const CROP_PATH      = path.join(IMG_PATH, "..", "yolo_crop")
+const JSON_PATH      = path.join(IMG_PATH, "..", "data_yolo.json") // Nome del file per il salvataggio dei dati
+const SALVA_CROP     = true              // salvare le immagini croppate?
+const CROP_SIZE      = 256               // ridimensiona crop (lasciare “null” per dimensione originale)
 
-// Nome del file per il salvataggio dei dati
-const OUTPUT = "data_yolo.json"
+const PROB_THRESHOLD = 0.5               // thresold per detect di un oggetto
+const YOLO_IMAGE_W   = 640               // non cambiare (per ora)
+const YOLO_IMAGE_H   = 640               // non cambiare (per ora)
 
-// Percorso delle cartella delle immagini (relativo a questo script)
-const IMG_PATH = "../img_orig"
+run()
 
-// Files da ignorare:
-const FILES_DA_IGNORARE = ['.DS_Store', '.AppleDouble', '.LSOverride']
+async function run() {
 
-// Elenco di tutti i files nella cartella PATH
-const files = fs.readdirSync(IMG_PATH).filter( e => FILES_DA_IGNORARE.indexOf(e) == -1);
-
-// Boot...
-run(files, IMG_PATH)
-
-async function run(files, dir) {
 	const SESSION_OPTS = { executionProviders: ['cpu'] }
-	const MODEL = await OnnxRuntime.InferenceSession.create("yolov8m.onnx", SESSION_OPTS)
-
+	const MODEL = await OnnxRuntime.InferenceSession.create("model/yolov8m.onnx", SESSION_OPTS)
+	if (SALVA_CROP && !fs.existsSync(CROP_PATH)) fs.mkdirSync(CROP_PATH)
+	const files = scanFolder(IMG_PATH)
 	const data = []
 	let num_oggetti_trovati = 0
 
@@ -38,20 +32,33 @@ async function run(files, dir) {
 
 	for (const file of files) {
 
-		const [input, img_width, img_height] = await prepare_input(path.join(dir, file))
-		const output = await run_model(MODEL, input)
-		const detected_objs = process_output(output, img_width, img_height)
+		const FileName       = path.parse(file).name
+		const FileExtension  = path.extname(file)
+		const sharp_img      = await loadSharpImage(path.join(IMG_PATH, file))
 
-		console.log("File: " + file + " " + detected_objs.map( o => o.label).join(', '))
+		const input          = await prepare_input(sharp_img.image)
+		const output         = await run_model(MODEL, input)
+		const Objects        = process_output(output, sharp_img.md.width, sharp_img.md.height)
+
+		console.log("File: " + file + " " + Objects.map( o => o.label).join(', '))
 
 		data.push({
-			ImageWidth    : img_width,
-			ImageHeight   : img_height,
-			FileExtension : path.extname(file),
-			FileName      : path.parse(file).name,
-			Objects       : detected_objs
+			FileName,
+			FileExtension,
+			ImageWidth  : sharp_img.md.width,
+			ImageHeight : sharp_img.md.height,
+			Objects
 		})
-		num_oggetti_trovati += detected_objs.length
+
+		if (SALVA_CROP) {
+			let idx = 0
+			for (const o of Objects) {
+				const output_path = path.join(CROP_PATH, FileName + "_" + idx++ + ".jpg")
+				cropAndSaveSharpImage(sharp_img.image, o.box, output_path, CROP_SIZE)
+			}
+		}
+
+		num_oggetti_trovati += Objects.length
 	}
 
 	// ...fine cronometro
@@ -61,32 +68,30 @@ async function run(files, dir) {
 	console.log("Tempo impiegato: " + (t1 - t0) + "ms")
 	console.log("Numero di immagini analizzate: " + data.length)
 	console.log("Numero di oggetti identificati: " + num_oggetti_trovati)
-	console.log("Scrivo dati nel file: " + OUTPUT + "...")
-	fs.writeFileSync(OUTPUT, JSON.stringify(data, null, 4), "utf8")
+	console.log("Scrivo dati nel file: " + JSON_PATH + "...")
+	fs.writeFileSync(JSON_PATH, JSON.stringify(data, null, 4), "utf8")
 	console.log("Fatto!")
 	console.log(":)")
 }
 
-async function prepare_input(buf) {
-	const img = sharp(buf)
-	const md = await img.metadata()
-	const [img_width, img_height] = [md.width, md.height]
-	const pixels = await img.removeAlpha()
-		.resize({width:IMAGE_W, height:IMAGE_H, fit:'fill'})
+async function prepare_input(sharp_img) {
+	const pixels = await sharp_img.clone().removeAlpha()
+		.resize({width:YOLO_IMAGE_W, height:YOLO_IMAGE_H, fit:'fill'})
 		.raw()
 		.toBuffer()
-	const red = [], green = [], blue = []
+	const red = []
+	const green = []
+	const blue = []
 	for (let index=0; index<pixels.length; index+=3) {
 		red.push(pixels[index]/255.0)
 		green.push(pixels[index+1]/255.0)
 		blue.push(pixels[index+2]/255.0)
 	}
-	const input = [...red, ...green, ...blue]
-	return [input, img_width, img_height]
+	return [...red, ...green, ...blue]
 }
 
 async function run_model(model, input) {
-	const t = new OnnxRuntime.Tensor(Float32Array.from(input),[1, 3, IMAGE_W, IMAGE_H])
+	const t = new OnnxRuntime.Tensor(Float32Array.from(input),[1, 3, YOLO_IMAGE_W, YOLO_IMAGE_H])
 	const outputs = await model.run({images:t})
 	return outputs
 }
@@ -108,18 +113,16 @@ function process_output(output, img_width, img_height) {
 		const yc = data[  dim+index]
 		const w  = data[2*dim+index]
 		const h  = data[3*dim+index]
-		const x1 = Math.floor((xc-w/2)/IMAGE_W*img_width)
-		const y1 = Math.floor((yc-h/2)/IMAGE_H*img_height)
-		const x2 = Math.floor((xc+w/2)/IMAGE_W*img_width)
-		const y2 = Math.floor((yc+h/2)/IMAGE_H*img_height)
+		const x1 = Math.floor((xc-w/2)/YOLO_IMAGE_W*img_width)
+		const y1 = Math.floor((yc-h/2)/YOLO_IMAGE_H*img_height)
+		const x2 = Math.floor((xc+w/2)/YOLO_IMAGE_W*img_width)
+		const y2 = Math.floor((yc+h/2)/YOLO_IMAGE_H*img_height)
 		boxes.push({
 			box : {
-				x1,
-				y1,
-				x2,
-				y2,
-				w: x2 - x1,
-				h: y2 - y1,
+				left   : x1,
+				top    : y1,
+				width  : x2 - x1,
+				height : y2 - y1,
 			},
 			label,
 			prob : Math.round(prob * 1000) / 10
@@ -177,4 +180,4 @@ const YOLO_CLASSES = [
 	'couch', 'potted plant', 'bed', 'dining table', 'toilet', 'tv', 'laptop', 'mouse',
 	'remote', 'keyboard', 'cell phone', 'microwave', 'oven', 'toaster', 'sink', 'refrigerator',
 	'book', 'clock', 'vase', 'scissors', 'teddy bear', 'hair drier', 'toothbrush'
-];
+]
