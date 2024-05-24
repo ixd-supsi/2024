@@ -1,17 +1,15 @@
 # Inferenza YOLOv8
 
-### Struttura cartelle
-```
-/img_orig    # cartella con le immagini da analizzare
-/YOLO_detect # cartella con questo script
-```
+Aprire il terminale nella cartella ```yolo_detect```   
 
-Aprire il terminale nella cartella ```YOLO_detect```
+
 
 ### Prima esecuzione
 ```
 npm install
 ```
+
+Assicurarsi che il file ```common/image_path.cfg``` contenga il percorso **assoluto** alla cartella delle immagini da analizzare.
 
 ### Esecuzione script
 ```
@@ -30,12 +28,10 @@ Verrà creato un file ```data_yolo.json```
         "Objects": [
             {
                 "box": {
-                    "x1": 156,
-                    "y1": 143,
-                    "x2": 240,
-                    "y2": 511,
-                    "w": 84,
-                    "h": 368
+                    "left": 156,
+                    "top": 143,
+                    "width": 84,
+                    "height": 368
                 },
                 "label": "person",
                 "prob": 90.2
