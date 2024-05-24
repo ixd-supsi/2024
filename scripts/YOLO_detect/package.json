@@ -11,6 +11,6 @@
   "license": "ISC",
   "dependencies": {
     "onnxruntime-node": "^1.14.0",
-    "sharp": "^0.32.1"
+    "sharp": "^0.33.4"
   }
 }
