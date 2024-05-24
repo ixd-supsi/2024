@@ -32,8 +32,8 @@ async function run() {
 			console.log("File: " + file)
 
 			data.push({
-				ImageWidth : output.ExifImageWidth,
-				ImageHeight : output.ExifImageHeight,
+				// ImageWidth : output.ExifImageWidth,
+				// ImageHeight : output.ExifImageHeight,
 				FileExtension : path.extname(file),
 				FileName : path.parse(file).name,
 				EXIF : output
