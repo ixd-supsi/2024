@@ -1,10 +1,5 @@
 # Inferenza Face-API
 
-### Struttura cartelle
-```
-/img_orig    # cartella con le immagini da analizzare
-/face_detect # cartella con questo script
-```
 
 Aprire il terminale nella cartella ```YOLO_detect```
 
@@ -12,6 +7,8 @@ Aprire il terminale nella cartella ```YOLO_detect```
 ```
 npm install
 ```
+
+Assicurarsi che il file ```common/image_path.cfg``` contenga il percorso **assoluto** alla cartella delle immagini da analizzare.
 
 ### Esecuzione script
 ```
@@ -31,12 +28,10 @@ Verrà creato un file ```data_faces.json```
         "Faces": [
             {
                 "box": {
-                    "x1": 382,
-                    "y1": 132,
-                    "x2": 516,
-                    "y2": 263,
-                    "w": 134,
-                    "h": 130
+                    "left": 156,
+                    "top": 143,
+                    "width": 84,
+                    "height": 368
                 },
                 "confidence": 94.8,
                 "gender": "female",
