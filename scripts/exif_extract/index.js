@@ -1,56 +1,54 @@
 import exifr from 'exifr'
 import fs from 'fs'
 import path from 'path'
-
-// Nome del file per il salvataggio dei dati
-const OUTPUT = "data_exif.json"
-
-// Percorso delle cartella delle immagini (relativo a questo script)
-// const PATH = "../img_orig"
-const PATH = "/Users/andreas/Desktop/img_512_sel"
+import { scanFolder, getImagePath } from './common.js'
 
 // È possibile selezionare solo i campi desiderati:
 // const FILTRO = ['ISO', 'Orientation', 'LensModel']
 // ...oppure inserirli tutti:
 const FILTRO = undefined
 
-// Files da ignorare:
-const FILES_DA_IGNORARE = ['.DS_Store', '.AppleDouble', '.LSOverride']
+const IMG_PATH  = getImagePath()    // percorso delle cartella delle immagini (relativo a questo script)
+const JSON_PATH = path.join(IMG_PATH, "..", "data_exif.json") // Nome del file per il salvataggio dei dati
 
-// Elenco di tutti i files nella cartella PATH
-const files = fs.readdirSync(PATH).filter( e => FILES_DA_IGNORARE.indexOf(e) == -1)
+run()
 
-// immagine singola
-exifr.parse(path.join(PATH,files[10])).then(output => {
-	console.log(output)
-})
+async function run() {
 
-const data = []
+	const files = scanFolder(IMG_PATH)
 
-// Inizio cronometro...
-const t0 = (new Date()).getTime()
+	// immagine singola per avere un esempio della struttura dei metadati
+	exifr.parse(path.join(IMG_PATH, files[0])).then(output => {
+		console.log(output)
+	})
 
-for (const file of files) {
-	await exifr.parse(path.join(PATH, file), FILTRO).then(output => {
-		console.log("File: " + file)
+	const data = []
 
-		data.push({
-			ImageWidth : output.ExifImageWidth,
-			ImageHeight : output.ExifImageHeight,
-			FileExtension : path.extname(file),
-			FileName : path.parse(file).name,
-			EXIF : output
-		})
-	}).catch( error => console.log("Errore: " + file))
+	// Inizio cronometro...
+	const t0 = (new Date()).getTime()
+
+	for (const file of files) {
+		await exifr.parse(path.join(IMG_PATH, file), FILTRO).then(output => {
+			console.log("File: " + file)
+
+			data.push({
+				ImageWidth : output.ExifImageWidth,
+				ImageHeight : output.ExifImageHeight,
+				FileExtension : path.extname(file),
+				FileName : path.parse(file).name,
+				EXIF : output
+			})
+		}).catch( e => console.log("Errore: " + file))
+	}
+
+	// ...fine cronometro
+	const t1 = (new Date()).getTime()
+
+	console.log()
+	console.log("Tempo impiegato: " + (t1 - t0) + "ms")
+	console.log("Numero di immagini analizzate: " + data.length)
+	console.log("Scrivo dati nel file: " + JSON_PATH + "...")
+	fs.writeFileSync(JSON_PATH, JSON.stringify(data, null, 4), 'utf8')
+	console.log("Fatto!")
+	console.log(":)")
 }
-
-// ...fine cronometro
-const t1 = (new Date()).getTime()
-
-console.log()
-console.log("Tempo impiegato: " + (t1 - t0) + "ms")
-console.log("Numero di immagini analizzate: " + data.length)
-console.log("Scrivo dati nel file: " + OUTPUT + "...")
-fs.writeFileSync(OUTPUT, JSON.stringify(data, null, 4), 'utf8')
-console.log("Fatto!")
-console.log(":)")
