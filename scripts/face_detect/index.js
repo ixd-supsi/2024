@@ -66,8 +66,8 @@ async function run() {
 		data.push({
 			FileName,
 			FileExtension,
-			ImageWidth  : sharp_img.md.width,
-			ImageHeight : sharp_img.md.height,
+			// ImageWidth  : sharp_img.md.width,
+			// ImageHeight : sharp_img.md.height,
 			Faces
 		})
 
@@ -75,6 +75,9 @@ async function run() {
 			let idx = 0
 			for (const o of Faces) {
 				const output_path = path.join(CROP_PATH, FileName + "_" + idx++ + ".jpg")
+
+				console.log(o.box)
+
 				cropAndSaveSharpImage(sharp_img.image, o.box, output_path, CROP_SIZE)
 			}
 		}

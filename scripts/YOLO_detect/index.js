@@ -45,8 +45,8 @@ async function run() {
 		data.push({
 			FileName,
 			FileExtension,
-			ImageWidth  : sharp_img.md.width,
-			ImageHeight : sharp_img.md.height,
+			// ImageWidth  : sharp_img.md.width,
+			// ImageHeight : sharp_img.md.height,
 			Objects
 		})
 

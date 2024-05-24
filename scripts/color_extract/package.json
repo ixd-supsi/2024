@@ -1,0 +1,14 @@
+{
+  "name": "resize",
+  "version": "1.0",
+  "description": "Ridimensionamento immagini (e conversione formato)",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "get-image-colors": "^4.0.1",
+    "sharp": "^0.33.4"
+  }
+}
