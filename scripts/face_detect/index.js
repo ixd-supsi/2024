@@ -8,7 +8,7 @@ const IMG_PATH       = getImagePath()    // percorso delle cartella delle immagi
 const CROP_PATH      = path.join(IMG_PATH, "..", "face_crop")
 const JSON_PATH      = path.join(IMG_PATH, "..", "data_face.json") // Nome del file per il salvataggio dei dati
 const SALVA_CROP     = true              // salvare le immagini croppate?
-const CROP_SIZE      = 256              // ridimensiona crop (lasciare “null” per dimensione originale)
+const CROP_SIZE      = null // 256       // ridimensiona crop (lasciare “null” per dimensione originale)
 
 const MIN_CONFIDENCE_THRESHOLD = 0.15
 const MAX_RESULTS    = 50
@@ -75,9 +75,6 @@ async function run() {
 			let idx = 0
 			for (const o of Faces) {
 				const output_path = path.join(CROP_PATH, FileName + "_" + idx++ + ".jpg")
-
-				console.log(o.box)
-
 				cropAndSaveSharpImage(sharp_img.image, o.box, output_path, CROP_SIZE)
 			}
 		}

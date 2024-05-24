@@ -54,6 +54,7 @@ async function run() {
 			let idx = 0
 			for (const o of Objects) {
 				const output_path = path.join(CROP_PATH, FileName + "_" + idx++ + ".jpg")
+				console.log(o.box)
 				cropAndSaveSharpImage(sharp_img.image, o.box, output_path, CROP_SIZE)
 			}
 		}
@@ -75,7 +76,9 @@ async function run() {
 }
 
 async function prepare_input(sharp_img) {
-	const pixels = await sharp_img.clone().removeAlpha()
+	const pixels = await sharp_img
+		.clone()
+		.removeAlpha()
 		.resize({width:YOLO_IMAGE_W, height:YOLO_IMAGE_H, fit:'fill'})
 		.raw()
 		.toBuffer()
