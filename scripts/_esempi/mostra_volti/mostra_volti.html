@@ -28,7 +28,6 @@
 
         let output = ''
 
-
         function getResizedDimensions(originalWidth, originalHeight, maxWidth, maxHeight) {
             let width = originalWidth;
             let height = originalHeight;
@@ -66,7 +65,7 @@
                     let height = canvas.offsetHeight
                     let width = canvas.offsetWidth
 
-                    let n_elem = 6
+                    let n_elem = 7
                     let size = width / n_elem
                     
                     let index = 0;
@@ -75,21 +74,23 @@
                     for (const item of data) {
 
                         if(item.Faces && item.Faces.length > 0){
-
                             
-                            for (const person of item.Faces) {
-                                // console.log(person)                        
+                            for (const person of item.Faces) {          
 
                                 let file = path + item.FileName + item.FileExtension
 
                                 loadImage(file, (img) => {
+                                    console.log(person)
 
                                     const bBox = person.box
-                                    console.log(bBox)
+                                    const age = person.age
+                                    const gender = person.gender
+                                    const confidence = person.confidence
+                                    const expression = person.expression
 
                                     // definisco la posizione verticale e orizzontale
                                     x = (index % n_elem) * size;
-                                    y = Math.floor(index / n_elem) * size;
+                                    y = Math.floor(index / n_elem) * size ;
 
                                     ctx.drawImage(
                                         img,
@@ -100,7 +101,10 @@
                                         // getResizedDimensions(bBox.w, bBox.h, size, size).width, getResizedDimensions(bBox.w, bBox.h, size, size).height
                                     );
                                     
-                                    // ctx.fillText(item.FileName, x, y)
+                                    ctx.fillStyle = 'white';
+                                    ctx.fillText(gender + ', ' + age + ', ' + expression , x + 5, y + size - 5)
+
+                                    // console.log(gender, index, x, y)
                                     
                                     index++;
                                 });
@@ -113,17 +117,17 @@
 
     document.addEventListener('DOMContentLoaded', () => {
         w = window.innerWidth;
+        h = window.innerHeight;
 
         box = document.getElementById("box")
 
         canvas = document.createElement('canvas');
         canvas.id = 'myCanvas';
         canvas.width = w;
-        canvas.height = 600;
+        canvas.height = h;
 
         box.appendChild(canvas);
         ctx = canvas.getContext('2d');
-
 
         load_imgs()
 
