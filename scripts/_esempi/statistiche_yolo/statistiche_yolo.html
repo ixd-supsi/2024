@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statistiche immagini</title>
+</head>
+<body>
+    
+    <div id="box">
+        <pre id="output"></pre>
+    </div>
+
+    <script>
+        const path_to_json = "dati/data.json"
+
+        let count_images = 0
+        let count_nofeat_img = 0
+        let count_features = 0
+
+        const occurrences = {};
+
+        output_container = document.getElementById('output')
+        let output = ''
+
+        fetch(path_to_json)
+            .then(res => res.json())
+            .then(data => {
+                // console.log(data)
+
+                for (const item of data) {
+                    // console.log(item)
+
+                    let obj = item.Objects
+                
+                    if (obj && obj.length > 0){
+                        // console.log(obj)
+
+                        label = obj[0].label
+
+                        if (occurrences[label]) {
+                            occurrences[label]++;
+                        } else {
+                            occurrences[label] = 1;
+                        }
+                    }
+                }
+                console.log(occurrences)
+
+                output += '<table>'
+
+                for (const key in occurrences) {
+                    if (occurrences.hasOwnProperty(key)) {
+                        // console.log(key)
+
+                        output += '<tr>'
+                        output += '<td>' + key + '</td>'
+                        output += '<td>' + occurrences[key] + '</td>'
+                        output += '</tr>'
+
+                    }
+                }
+
+                output += '</table>'
+                
+                output_container.innerHTML = output
+                console.log(output_container)
+            })
+
+    </script>
+</body>
+</html>

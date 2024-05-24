@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statistiche immagini</title>
+</head>
+<body>
+
+    <div id="box">
+        <pre id="output"></pre>
+    </div>
+
+    <script>
+        const path_to_json = "dati/data.json"
+        const occurrences = {};
+
+        output_container = document.getElementById('output')
+        let output = ''
+
+        fetch(path_to_json)
+            .then(res => res.json())
+            .then(data => {
+                // console.log(data)
+
+                for (const item of data) {
+                    
+                    if (item.DateTimeOriginal){
+                        let date = item.DateTimeOriginal
+                        let ISO = item.ISO
+
+                        let date_ = new Date(date);
+                        const hour = date_.getHours();
+                        // const minute = date_.getMinutes();
+
+                        if (occurrences[hour]) {
+                            occurrences[hour]++;
+                        } else {
+                            occurrences[hour] = 1;
+                        }
+                    }
+                }
+                console.log(occurrences)
+
+                output += '<table>'
+
+                for (const key in occurrences) {
+                    if (occurrences.hasOwnProperty(key)) {
+
+                        output += '<tr>'
+                        output += '<td>' + key + '</td>'
+                        output += '<td>' + occurrences[key] + '</td>'
+                        output += '</tr>'
+
+                    }
+                }
+
+                output += '</table>'
+                
+                output_container.innerHTML = output
+            })
+
+    </script>
+</body>
+</html>
