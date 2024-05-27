@@ -9,7 +9,7 @@ import { scanFolder, getImagePath, loadSharpImage, cropAndSaveSharpImage } from 
 const IMG_PATH       = getImagePath()    // percorso delle cartella delle immagini (relativo a questo script)
 const CROP_PATH      = path.join(IMG_PATH, "..", "yolo_crop")
 const JSON_PATH      = path.join(IMG_PATH, "..", "data_yolo.json") // Nome del file per il salvataggio dei dati
-const SALVA_CROP     = true             // salvare le immagini croppate?
+const SALVA_CROP     = true              // salvare le immagini croppate?
 const CROP_SIZE      = 256               // ridimensiona crop (lasciare “null” per dimensione originale)
 
 const PROB_THRESHOLD = 0.5               // thresold per detect di un oggetto
@@ -34,19 +34,18 @@ async function run() {
 
 		const FileName       = path.parse(file).name
 		const FileExtension  = path.extname(file)
+
 		const sharp_img      = await loadSharpImage(path.join(IMG_PATH, file))
 
 		const input          = await prepare_input(sharp_img.image)
 		const output         = await run_model(MODEL, input)
-		const Objects        = process_output(output, sharp_img.md.width, sharp_img.md.height)
+		const Objects        = process_output(output, sharp_img.width, sharp_img.height)
 
 		console.log("File: " + file + " " + Objects.map( o => o.label).join(', '))
 
 		data.push({
 			FileName,
 			FileExtension,
-			// ImageWidth  : sharp_img.md.width,
-			// ImageHeight : sharp_img.md.height,
 			Objects
 		})
 
@@ -79,15 +78,15 @@ async function prepare_input(sharp_img) {
 		.resize({width:YOLO_IMAGE_W, height:YOLO_IMAGE_H, fit:'fill'})
 		.raw()
 		.toBuffer()
-	const red = []
-	const green = []
-	const blue = []
-	for (let index=0; index<pixels.length; index+=3) {
-		red.push(pixels[index]/255.0)
-		green.push(pixels[index+1]/255.0)
-		blue.push(pixels[index+2]/255.0)
+	const r = []
+	const g = []
+	const b = []
+	for (let i=0; i<pixels.length; i+=3) {
+		r.push( pixels[i  ]/255.0 )
+		g.push( pixels[i+1]/255.0 )
+		b.push( pixels[i+2]/255.0 )
 	}
-	return [...red, ...green, ...blue]
+	return [...r, ...g, ...b]
 }
 
 async function run_model(model, input) {
@@ -110,20 +109,24 @@ function process_output(output, img_width, img_height) {
 
 		const label = YOLO_CLASSES[class_id]
 		const xc = data[index]
-		const yc = data[  dim+index]
-		const w  = data[2*dim+index]
-		const h  = data[3*dim+index]
-		const x1 = Math.floor((xc-w/2)/YOLO_IMAGE_W*img_width)
-		const y1 = Math.floor((yc-h/2)/YOLO_IMAGE_H*img_height)
-		const x2 = Math.floor((xc+w/2)/YOLO_IMAGE_W*img_width)
-		const y2 = Math.floor((yc+h/2)/YOLO_IMAGE_H*img_height)
+		const yc = data[    dim + index]
+		const w  = data[2 * dim + index]
+		const h  = data[3 * dim + index]
+		const x1 = Math.max(0, Math.floor((xc-w/2)/YOLO_IMAGE_W*img_width))
+		const y1 = Math.max(0, Math.floor((yc-h/2)/YOLO_IMAGE_H*img_height))
+		const x2 = Math.min(img_width - 1, Math.floor((xc+w/2)/YOLO_IMAGE_W*img_width))
+		const y2 = Math.min(img_height - 1, Math.floor((yc+h/2)/YOLO_IMAGE_H*img_height))
+
+
+		const box = {
+			left   : x1,
+			top    : y1,
+			width  : x2 - x1,
+			height : y2 - y1,
+		}
+
 		boxes.push({
-			box : {
-				left   : x1,
-				top    : y1,
-				width  : x2 - x1,
-				height : y2 - y1,
-			},
+			box,
 			label,
 			prob : Math.round(prob * 1000) / 10
 		})
@@ -133,7 +136,7 @@ function process_output(output, img_width, img_height) {
 	const result = []
 	while (boxes.length > 0) {
 		result.push(boxes[0])
-		boxes = boxes.filter(box => iou(boxes[0], box) < 0.7) // Threshold
+		boxes = boxes.filter(box => iou(boxes[0].box, box.box) < 0.7) // Threshold
 	}
 	return result
 }
@@ -144,7 +147,7 @@ function process_output(output, img_width, img_height) {
  * @returns Intersection over union ratio as a float number
  */
 function iou(box1, box2) {
-	return intersection(box1, box2) / union(box1, box2);
+	return intersection(box1, box2) / union(box1, box2)
 }
 
 /**
@@ -152,8 +155,8 @@ function iou(box1, box2) {
  * @returns Area of the boxes union as a float number
  */
 function union(box1, box2) {
-	const box1_area = (box1.x2-box1.x1) * (box1.y2-box1.y1)
-	const box2_area = (box2.x2-box2.x1) * (box2.y2-box2.y1)
+	const box1_area = box1.width * box1.height
+	const box2_area = box2.width * box2.height
 	return box1_area + box2_area - intersection(box1, box2)
 }
 
@@ -162,10 +165,10 @@ function union(box1, box2) {
  * @returns Area of intersection of the boxes as a float number
  */
 function intersection(box1,box2) {
-	const x1 = Math.max(box1.x1, box2.x1)
-	const y1 = Math.max(box1.y1, box2.y1)
-	const x2 = Math.min(box1.x2, box2.x2)
-	const y2 = Math.min(box1.y2, box2.y2)
+	const x1 = Math.max(box1.left, box2.left)
+	const y1 = Math.max(box1.top, box2.top)
+	const x2 = Math.min(box1.left + box1.width, box2.left + box2.width)
+	const y2 = Math.min(box1.top + box1.height, box2.top + box2.height)
 	return (x2-x1) * (y2-y1)
 }
 
