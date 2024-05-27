@@ -19,10 +19,12 @@ export function scanFolder(path) {
 
 export async function loadSharpImage(image_path) {
 	const image = sharp(image_path).rotate()
-	const md = await image.metadata()
+	// TODO: molto lento? (metdati non rispecchiano totazione JPG!)
+	const { info } = await image.toBuffer({ resolveWithObject: true })
 	return {
-		image, // align based on metadata
-		md
+		image,
+		width : info.width,
+		height : info.height,
  	}
 }
 
@@ -32,7 +34,7 @@ export async function cropAndSaveSharpImage(img, box, savePath, cropSize = null)
 			await img
 				.clone()
 				.extract(box)
-				.resize(cropSize, cropSize, {fit: 'inside'})
+				.resize(cropSize, cropSize, { fit: 'inside' })
 				.rotate()
 				.toFile(savePath)
 
@@ -45,5 +47,6 @@ export async function cropAndSaveSharpImage(img, box, savePath, cropSize = null)
 		}
 	} catch (e) {
 		console.log("Errore nel file: " + savePath)
+		console.log(e)
 	}
 }
