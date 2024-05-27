@@ -32,6 +32,12 @@
                     count_images += 1
 
                     let obj = item.Objects
+
+                    if (item.Objects && item.Objects.length > 0) {
+                        for (const obj of item.Objects) {
+                            console.log(obj.label);
+                        }
+                    }
                 
                     if (obj && obj.length > 0){
                         count_features += 1
