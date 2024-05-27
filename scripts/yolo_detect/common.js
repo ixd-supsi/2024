@@ -18,7 +18,7 @@ export function scanFolder(path) {
 }
 
 export async function loadSharpImage(image_path) {
-	const image = sharp(image_path).rotate()
+	const image = sharp(image_path)
 	const md = await image.metadata()
 	return {
 		image, // align based on metadata
