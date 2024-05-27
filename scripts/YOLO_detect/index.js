@@ -34,19 +34,18 @@ async function run() {
 
 		const FileName       = path.parse(file).name
 		const FileExtension  = path.extname(file)
+
 		const sharp_img      = await loadSharpImage(path.join(IMG_PATH, file))
 
 		const input          = await prepare_input(sharp_img.image)
 		const output         = await run_model(MODEL, input)
-		const Objects        = process_output(output, sharp_img.md.width, sharp_img.md.height)
+		const Objects        = process_output(output, sharp_img.width, sharp_img.height)
 
 		console.log("File: " + file + " " + Objects.map( o => o.label).join(', '))
 
 		data.push({
 			FileName,
 			FileExtension,
-			// ImageWidth  : sharp_img.md.width,
-			// ImageHeight : sharp_img.md.height,
 			Objects
 		})
 
@@ -79,15 +78,15 @@ async function prepare_input(sharp_img) {
 		.resize({width:YOLO_IMAGE_W, height:YOLO_IMAGE_H, fit:'fill'})
 		.raw()
 		.toBuffer()
-	const red = []
-	const green = []
-	const blue = []
-	for (let index=0; index<pixels.length; index+=3) {
-		red.push(pixels[index]/255.0)
-		green.push(pixels[index+1]/255.0)
-		blue.push(pixels[index+2]/255.0)
+	const r = []
+	const g = []
+	const b = []
+	for (let i=0; i<pixels.length; i+=3) {
+		r.push( pixels[i    ]/255.0 )
+		g.push( pixels[i + 1]/255.0 )
+		b.push( pixels[i + 2]/255.0 )
 	}
-	return [...red, ...green, ...blue]
+	return [...r, ...g, ...b]
 }
 
 async function run_model(model, input) {
@@ -110,20 +109,24 @@ function process_output(output, img_width, img_height) {
 
 		const label = YOLO_CLASSES[class_id]
 		const xc = data[index]
-		const yc = data[  dim+index]
-		const w  = data[2*dim+index]
-		const h  = data[3*dim+index]
-		const x1 = Math.floor((xc-w/2)/YOLO_IMAGE_W*img_width)
-		const y1 = Math.floor((yc-h/2)/YOLO_IMAGE_H*img_height)
-		const x2 = Math.floor((xc+w/2)/YOLO_IMAGE_W*img_width)
-		const y2 = Math.floor((yc+h/2)/YOLO_IMAGE_H*img_height)
+		const yc = data[    dim + index]
+		const w  = data[2 * dim + index]
+		const h  = data[3 * dim + index]
+		const x1 = Math.max(0, Math.floor((xc-w/2)/YOLO_IMAGE_W*img_width))
+		const y1 = Math.max(0, Math.floor((yc-h/2)/YOLO_IMAGE_H*img_height))
+		const x2 = Math.min(img_width - 1, Math.floor((xc+w/2)/YOLO_IMAGE_W*img_width))
+		const y2 = Math.min(img_height - 1, Math.floor((yc+h/2)/YOLO_IMAGE_H*img_height))
+
+
+		const box = {
+			left   : x1,
+			top    : y1,
+			width  : x2 - x1,
+			height : y2 - y1,
+		}
+
 		boxes.push({
-			box : {
-				left   : x1,
-				top    : y1,
-				width  : x2 - x1,
-				height : y2 - y1,
-			},
+			box,
 			label,
 			prob : Math.round(prob * 1000) / 10
 		})
