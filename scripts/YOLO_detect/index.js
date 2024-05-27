@@ -9,7 +9,7 @@ import { scanFolder, getImagePath, loadSharpImage, cropAndSaveSharpImage } from 
 const IMG_PATH       = getImagePath()    // percorso delle cartella delle immagini (relativo a questo script)
 const CROP_PATH      = path.join(IMG_PATH, "..", "yolo_crop")
 const JSON_PATH      = path.join(IMG_PATH, "..", "data_yolo.json") // Nome del file per il salvataggio dei dati
-const SALVA_CROP     = true             // salvare le immagini croppate?
+const SALVA_CROP     = true              // salvare le immagini croppate?
 const CROP_SIZE      = 256               // ridimensiona crop (lasciare “null” per dimensione originale)
 
 const PROB_THRESHOLD = 0.5               // thresold per detect di un oggetto
@@ -133,7 +133,7 @@ function process_output(output, img_width, img_height) {
 	const result = []
 	while (boxes.length > 0) {
 		result.push(boxes[0])
-		boxes = boxes.filter(box => iou(boxes[0], box) < 0.7) // Threshold
+		boxes = boxes.filter(box => iou(boxes[0].box, box.box) < 0.7) // Threshold
 	}
 	return result
 }
@@ -144,7 +144,7 @@ function process_output(output, img_width, img_height) {
  * @returns Intersection over union ratio as a float number
  */
 function iou(box1, box2) {
-	return intersection(box1, box2) / union(box1, box2);
+	return intersection(box1, box2) / union(box1, box2)
 }
 
 /**
@@ -152,8 +152,8 @@ function iou(box1, box2) {
  * @returns Area of the boxes union as a float number
  */
 function union(box1, box2) {
-	const box1_area = (box1.x2-box1.x1) * (box1.y2-box1.y1)
-	const box2_area = (box2.x2-box2.x1) * (box2.y2-box2.y1)
+	const box1_area = box1.width * box1.height
+	const box2_area = box2.width * box2.height
 	return box1_area + box2_area - intersection(box1, box2)
 }
 
@@ -162,10 +162,10 @@ function union(box1, box2) {
  * @returns Area of intersection of the boxes as a float number
  */
 function intersection(box1,box2) {
-	const x1 = Math.max(box1.x1, box2.x1)
-	const y1 = Math.max(box1.y1, box2.y1)
-	const x2 = Math.min(box1.x2, box2.x2)
-	const y2 = Math.min(box1.y2, box2.y2)
+	const x1 = Math.max(box1.left, box2.left)
+	const y1 = Math.max(box1.top, box2.top)
+	const x2 = Math.min(box1.left + box1.width, box2.left + box2.width)
+	const y2 = Math.min(box1.top + box1.height, box2.top + box2.height)
 	return (x2-x1) * (y2-y1)
 }
 
