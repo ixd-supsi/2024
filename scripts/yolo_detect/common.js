@@ -45,5 +45,6 @@ export async function cropAndSaveSharpImage(img, box, savePath, cropSize = null)
 		}
 	} catch (e) {
 		console.log("Errore nel file: " + savePath)
+		console.log(e)
 	}
 }
