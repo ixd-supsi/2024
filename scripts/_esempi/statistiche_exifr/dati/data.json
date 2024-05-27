@@ -1,774 +1,1037 @@
 [
     {
-        "ImageWidth": 768,
-        "ImageHeight": 768,
-        "FileExtension": ".jpg",
-        "FileName": "1699290802587-01",
-        "Faces": []
-    },
-    {
-        "ImageWidth": 576,
-        "ImageHeight": 768,
-        "FileExtension": ".jpg",
-        "FileName": "IMG_20230413_193630",
-        "Faces": []
-    },
-    {
-        "ImageWidth": 576,
-        "ImageHeight": 768,
-        "FileExtension": ".jpg",
-        "FileName": "IMG_20230422_095605",
-        "Faces": []
-    },
-    {
-        "ImageWidth": 576,
-        "ImageHeight": 768,
-        "FileExtension": ".jpg",
-        "FileName": "IMG_20230422_100002",
-        "Faces": []
-    },
-    {
-        "ImageWidth": 768,
-        "ImageHeight": 576,
-        "FileExtension": ".jpg",
-        "FileName": "IMG_20230422_100051",
-        "Faces": []
-    },
-    {
-        "ImageWidth": 576,
-        "ImageHeight": 768,
-        "FileExtension": ".jpg",
-        "FileName": "IMG_20230422_100321",
-        "Faces": []
-    },
-    {
-        "ImageWidth": 576,
-        "ImageHeight": 768,
-        "FileExtension": ".jpg",
-        "FileName": "IMG_20230422_100429",
-        "Faces": []
-    },
-    {
-        "ImageWidth": 576,
-        "ImageHeight": 768,
-        "FileExtension": ".jpg",
-        "FileName": "IMG_20230422_101430",
-        "Faces": []
-    },
-    {
-        "ImageWidth": 576,
-        "ImageHeight": 768,
-        "FileExtension": ".jpg",
-        "FileName": "IMG_20230422_101606",
-        "Faces": []
-    },
-    {
-        "ImageWidth": 768,
-        "ImageHeight": 576,
-        "FileExtension": ".jpg",
-        "FileName": "IMG_20230422_101944",
-        "Faces": []
-    },
-    {
-        "ImageWidth": 576,
-        "ImageHeight": 768,
-        "FileExtension": ".jpg",
-        "FileName": "IMG_20230422_102248",
-        "Faces": []
-    },
-    {
-        "ImageWidth": 576,
-        "ImageHeight": 768,
-        "FileExtension": ".jpg",
-        "FileName": "IMG_20230422_102350",
-        "Faces": [
-            {
-                "box": {
-                    "x1": 426,
-                    "y1": 23,
-                    "x2": 469,
-                    "y2": 69,
-                    "w": 42,
-                    "h": 46
-                },
-                "confidence": 86.6,
-                "gender": "male",
-                "genderConfidence": 89,
-                "age": 32.7,
-                "expression": "neutral",
-                "expressionConfidence": 88.5
-            }
-        ]
-    },
-    {
-        "ImageWidth": 576,
-        "ImageHeight": 768,
-        "FileExtension": ".jpg",
-        "FileName": "IMG_20230422_102510",
-        "Faces": []
-    },
-    {
-        "ImageWidth": 768,
-        "ImageHeight": 576,
-        "FileExtension": ".jpg",
-        "FileName": "IMG_20230422_102852",
-        "Faces": []
-    },
-    {
-        "ImageWidth": 576,
-        "ImageHeight": 768,
-        "FileExtension": ".jpg",
-        "FileName": "IMG_20230422_103059",
-        "Faces": []
-    },
-    {
-        "ImageWidth": 768,
-        "ImageHeight": 576,
-        "FileExtension": ".jpg",
-        "FileName": "IMG_20230422_105013",
-        "Faces": []
-    },
-    {
-        "ImageWidth": 768,
-        "ImageHeight": 576,
-        "FileExtension": ".jpg",
-        "FileName": "IMG_20230422_110023",
-        "Faces": []
-    },
-    {
-        "ImageWidth": 576,
-        "ImageHeight": 768,
-        "FileExtension": ".jpg",
-        "FileName": "IMG_20230422_110137",
-        "Faces": []
-    },
-    {
-        "ImageWidth": 576,
-        "ImageHeight": 768,
-        "FileExtension": ".jpg",
-        "FileName": "IMG_20230422_110300",
-        "Faces": []
-    },
-    {
-        "ImageWidth": 576,
-        "ImageHeight": 768,
-        "FileExtension": ".jpg",
-        "FileName": "IMG_20230422_110703",
-        "Faces": []
-    },
-    {
-        "ImageWidth": 576,
-        "ImageHeight": 768,
-        "FileExtension": ".jpg",
-        "FileName": "IMG_20230422_110721",
-        "Faces": []
-    },
-    {
-        "ImageWidth": 576,
-        "ImageHeight": 768,
-        "FileExtension": ".jpg",
-        "FileName": "IMG_20230422_110803",
-        "Faces": []
-    },
-    {
-        "ImageWidth": 576,
-        "ImageHeight": 768,
-        "FileExtension": ".jpg",
-        "FileName": "IMG_20230422_111813",
-        "Faces": []
-    },
-    {
-        "ImageWidth": 576,
-        "ImageHeight": 768,
-        "FileExtension": ".jpg",
-        "FileName": "IMG_20230422_112224",
-        "Faces": []
-    },
-    {
-        "ImageWidth": 576,
-        "ImageHeight": 768,
-        "FileExtension": ".jpg",
-        "FileName": "IMG_20230422_112337",
-        "Faces": [
-            {
-                "box": {
-                    "x1": 516,
-                    "y1": 302,
-                    "x2": 538,
-                    "y2": 315,
-                    "w": 22,
-                    "h": 13
-                },
-                "confidence": 99,
-                "gender": "male",
-                "genderConfidence": 99.2,
-                "age": 42.6,
-                "expression": "neutral",
-                "expressionConfidence": 93.1
-            }
-        ]
-    },
-    {
-        "ImageWidth": 576,
-        "ImageHeight": 768,
-        "FileExtension": ".jpg",
-        "FileName": "IMG_20230422_112355",
-        "Faces": []
-    },
-    {
-        "ImageWidth": 768,
-        "ImageHeight": 576,
-        "FileExtension": ".jpg",
-        "FileName": "IMG_20230422_112457",
-        "Faces": []
-    },
-    {
-        "ImageWidth": 768,
-        "ImageHeight": 576,
-        "FileExtension": ".jpg",
-        "FileName": "IMG_20230422_112644",
-        "Faces": []
-    },
-    {
-        "ImageWidth": 768,
-        "ImageHeight": 576,
-        "FileExtension": ".jpg",
-        "FileName": "IMG_20230422_113337",
-        "Faces": []
-    },
-    {
-        "ImageWidth": 768,
-        "ImageHeight": 576,
-        "FileExtension": ".jpg",
-        "FileName": "IMG_20230423_164740",
-        "Faces": []
-    },
-    {
-        "ImageWidth": 768,
-        "ImageHeight": 576,
-        "FileExtension": ".jpg",
-        "FileName": "IMG_20230423_165022",
-        "Faces": []
-    },
-    {
-        "ImageWidth": 768,
-        "ImageHeight": 576,
-        "FileExtension": ".jpg",
-        "FileName": "IMG_20230423_165836",
-        "Faces": []
-    },
-    {
-        "ImageWidth": 576,
-        "ImageHeight": 768,
-        "FileExtension": ".jpg",
-        "FileName": "IMG_20230423_165925",
-        "Faces": []
-    },
-    {
-        "ImageWidth": 768,
-        "ImageHeight": 576,
-        "FileExtension": ".jpg",
-        "FileName": "IMG_20230423_170251",
-        "Faces": []
-    },
-    {
-        "ImageWidth": 576,
-        "ImageHeight": 768,
-        "FileExtension": ".jpg",
-        "FileName": "IMG_20230423_170332",
-        "Faces": []
-    },
-    {
-        "ImageWidth": 576,
-        "ImageHeight": 768,
-        "FileExtension": ".jpg",
-        "FileName": "IMG_20230423_170423",
-        "Faces": []
-    },
-    {
-        "ImageWidth": 576,
-        "ImageHeight": 768,
-        "FileExtension": ".jpg",
-        "FileName": "IMG_20230423_170520",
-        "Faces": []
-    },
-    {
-        "ImageWidth": 576,
-        "ImageHeight": 768,
-        "FileExtension": ".jpg",
-        "FileName": "IMG_20230423_170648",
-        "Faces": []
-    },
-    {
-        "ImageWidth": 768,
-        "ImageHeight": 576,
-        "FileExtension": ".jpg",
-        "FileName": "IMG_20230423_171006",
-        "Faces": []
-    },
-    {
-        "ImageWidth": 576,
-        "ImageHeight": 768,
-        "FileExtension": ".jpg",
-        "FileName": "IMG_20230423_171320",
-        "Faces": []
-    },
-    {
-        "ImageWidth": 576,
-        "ImageHeight": 768,
-        "FileExtension": ".jpg",
-        "FileName": "IMG_20230424_085857",
-        "Faces": []
-    },
-    {
-        "ImageWidth": 576,
-        "ImageHeight": 768,
-        "FileExtension": ".jpg",
-        "FileName": "IMG_20230501_180326",
-        "Faces": []
-    },
-    {
-        "ImageWidth": 576,
-        "ImageHeight": 768,
-        "FileExtension": ".jpg",
-        "FileName": "IMG_20230507_145759",
-        "Faces": []
-    },
-    {
-        "ImageWidth": 768,
-        "ImageHeight": 576,
-        "FileExtension": ".jpg",
-        "FileName": "IMG_20230513_141521",
-        "Faces": [
-            {
-                "box": {
-                    "x1": 158,
-                    "y1": 390,
-                    "x2": 173,
-                    "y2": 398,
-                    "w": 14,
-                    "h": 8
-                },
-                "confidence": 81.5,
-                "gender": "male",
-                "genderConfidence": 97.5,
-                "age": 17.3,
-                "expression": "neutral",
-                "expressionConfidence": 78.9
-            }
-        ]
-    },
-    {
-        "ImageWidth": 576,
-        "ImageHeight": 768,
-        "FileExtension": ".jpg",
-        "FileName": "IMG_20230513_150102",
-        "Faces": [
-            {
-                "box": {
-                    "x1": 286,
-                    "y1": 631,
-                    "x2": 299,
-                    "y2": 640,
-                    "w": 13,
-                    "h": 9
-                },
-                "confidence": 61.5,
-                "gender": "male",
-                "genderConfidence": 65.9,
-                "age": 19.4,
-                "expression": "neutral",
-                "expressionConfidence": 86.5
-            }
-        ]
-    },
-    {
-        "ImageWidth": 768,
-        "ImageHeight": 576,
-        "FileExtension": ".jpg",
-        "FileName": "IMG_20230513_151730",
-        "Faces": []
-    },
-    {
-        "ImageWidth": 768,
-        "ImageHeight": 576,
-        "FileExtension": ".jpg",
-        "FileName": "IMG_20230513_151746",
-        "Faces": []
-    },
-    {
-        "ImageWidth": 768,
-        "ImageHeight": 576,
-        "FileExtension": ".jpg",
-        "FileName": "IMG_20230513_153403",
-        "Faces": []
-    },
-    {
-        "ImageWidth": 576,
-        "ImageHeight": 768,
-        "FileExtension": ".jpg",
-        "FileName": "IMG_20230513_153417",
-        "Faces": []
-    },
-    {
-        "ImageWidth": 576,
-        "ImageHeight": 768,
-        "FileExtension": ".jpg",
-        "FileName": "IMG_20230513_155649",
-        "Faces": []
-    },
-    {
-        "ImageWidth": 576,
-        "ImageHeight": 768,
-        "FileExtension": ".jpg",
-        "FileName": "IMG_20230513_203425",
-        "Faces": []
-    },
-    {
-        "ImageWidth": 768,
-        "ImageHeight": 576,
-        "FileExtension": ".jpg",
-        "FileName": "IMG_20230514_154353",
-        "Faces": []
-    },
-    {
-        "ImageWidth": 576,
-        "ImageHeight": 768,
-        "FileExtension": ".jpg",
-        "FileName": "IMG_20230516_153359",
-        "Faces": []
-    },
-    {
-        "ImageWidth": 576,
-        "ImageHeight": 768,
-        "FileExtension": ".jpg",
-        "FileName": "IMG_20230516_165735",
-        "Faces": [
-            {
-                "box": {
-                    "x1": 276,
-                    "y1": 507,
-                    "x2": 305,
-                    "y2": 534,
-                    "w": 29,
-                    "h": 26
-                },
-                "confidence": 97.3,
-                "gender": "male",
-                "genderConfidence": 97.3,
-                "age": 25.7,
-                "expression": "neutral",
-                "expressionConfidence": 60.9
-            },
-            {
-                "box": {
-                    "x1": 126,
-                    "y1": 401,
-                    "x2": 138,
-                    "y2": 409,
-                    "w": 11,
-                    "h": 8
-                },
-                "confidence": 96.8,
-                "gender": "male",
-                "genderConfidence": 79.1,
-                "age": 22.1,
-                "expression": "neutral",
-                "expressionConfidence": 97.7
-            },
-            {
-                "box": {
-                    "x1": 115,
-                    "y1": 528,
-                    "x2": 130,
-                    "y2": 540,
-                    "w": 14,
-                    "h": 11
-                },
-                "confidence": 96.1,
-                "gender": "male",
-                "genderConfidence": 68.3,
-                "age": 16.2,
-                "expression": "neutral",
-                "expressionConfidence": 79.1
-            },
-            {
-                "box": {
-                    "x1": 129,
-                    "y1": 258,
-                    "x2": 139,
-                    "y2": 265,
-                    "w": 9,
-                    "h": 7
-                },
-                "confidence": 84.8,
-                "gender": "male",
-                "genderConfidence": 61.6,
-                "age": 15.1,
-                "expression": "neutral",
-                "expressionConfidence": 98.6
-            },
-            {
-                "box": {
-                    "x1": 227,
-                    "y1": 403,
-                    "x2": 250,
-                    "y2": 422,
-                    "w": 22,
-                    "h": 19
-                },
-                "confidence": 78,
-                "gender": "female",
-                "genderConfidence": 90.5,
-                "age": 18.1,
-                "expression": "happy",
-                "expressionConfidence": 72.6
-            },
-            {
-                "box": {
-                    "x1": 123,
-                    "y1": 25,
-                    "x2": 134,
-                    "y2": 36,
-                    "w": 11,
-                    "h": 11
-                },
-                "confidence": 66.3,
-                "gender": "male",
-                "genderConfidence": 72.5,
-                "age": 17.4,
-                "expression": "happy",
-                "expressionConfidence": 52.7
-            },
-            {
-                "box": {
-                    "x1": 92,
-                    "y1": 266,
-                    "x2": 102,
-                    "y2": 280,
-                    "w": 10,
-                    "h": 13
-                },
-                "confidence": 50.1,
-                "gender": "male",
-                "genderConfidence": 89.4,
-                "age": 18.7,
-                "expression": "neutral",
-                "expressionConfidence": 93.3
-            }
-        ]
-    },
-    {
-        "ImageWidth": 768,
-        "ImageHeight": 576,
-        "FileExtension": ".jpg",
-        "FileName": "IMG_20230520_145529",
-        "Faces": []
-    },
-    {
-        "ImageWidth": 576,
-        "ImageHeight": 768,
-        "FileExtension": ".jpg",
-        "FileName": "IMG_20230520_150646",
-        "Faces": []
-    },
-    {
-        "ImageWidth": 576,
-        "ImageHeight": 768,
-        "FileExtension": ".jpg",
-        "FileName": "IMG_20230520_150650",
-        "Faces": []
-    },
-    {
-        "ImageWidth": 576,
-        "ImageHeight": 768,
-        "FileExtension": ".jpg",
-        "FileName": "IMG_20230520_150657",
-        "Faces": []
-    },
-    {
-        "ImageWidth": 576,
-        "ImageHeight": 768,
-        "FileExtension": ".jpg",
-        "FileName": "IMG_20230520_150658",
-        "Faces": []
-    },
-    {
-        "ImageWidth": 576,
-        "ImageHeight": 768,
-        "FileExtension": ".jpg",
-        "FileName": "IMG_20230520_150707",
-        "Faces": []
-    },
-    {
-        "ImageWidth": 576,
-        "ImageHeight": 768,
-        "FileExtension": ".jpg",
-        "FileName": "IMG_20230525_183345",
-        "Faces": []
-    },
-    {
-        "ImageWidth": 576,
-        "ImageHeight": 768,
-        "FileExtension": ".jpg",
-        "FileName": "IMG_20230527_162611",
-        "Faces": []
-    },
-    {
-        "ImageWidth": 768,
-        "ImageHeight": 576,
-        "FileExtension": ".jpg",
-        "FileName": "IMG_20230603_133538",
-        "Faces": []
-    },
-    {
-        "ImageWidth": 768,
-        "ImageHeight": 576,
-        "FileExtension": ".jpg",
-        "FileName": "IMG_20230603_133631",
-        "Faces": []
-    },
-    {
-        "ImageWidth": 576,
-        "ImageHeight": 768,
-        "FileExtension": ".jpg",
-        "FileName": "IMG_20230603_141959",
-        "Faces": []
-    },
-    {
-        "ImageWidth": 768,
-        "ImageHeight": 576,
-        "FileExtension": ".jpg",
-        "FileName": "IMG_20230603_145916",
-        "Faces": []
-    },
-    {
-        "ImageWidth": 576,
-        "ImageHeight": 768,
-        "FileExtension": ".jpg",
-        "FileName": "IMG_20230603_150301",
-        "Faces": []
-    },
-    {
-        "ImageWidth": 768,
-        "ImageHeight": 576,
-        "FileExtension": ".jpg",
-        "FileName": "IMG_20230603_152044",
-        "Faces": []
-    },
-    {
-        "ImageWidth": 768,
-        "ImageHeight": 576,
-        "FileExtension": ".jpg",
-        "FileName": "IMG_20230603_152729",
-        "Faces": []
-    },
-    {
-        "ImageWidth": 576,
-        "ImageHeight": 768,
-        "FileExtension": ".jpg",
-        "FileName": "IMG_20230603_154657",
-        "Faces": []
-    },
-    {
-        "ImageWidth": 768,
-        "ImageHeight": 576,
-        "FileExtension": ".jpg",
-        "FileName": "IMG_20230603_155944",
-        "Faces": []
-    },
-    {
-        "ImageWidth": 576,
-        "ImageHeight": 768,
-        "FileExtension": ".jpg",
-        "FileName": "IMG_20230603_170350",
-        "Faces": [
-            {
-                "box": {
-                    "x1": 513,
-                    "y1": 542,
-                    "x2": 542,
-                    "y2": 570,
-                    "w": 28,
-                    "h": 27
-                },
-                "confidence": 95.3,
-                "gender": "male",
-                "genderConfidence": 77.7,
-                "age": 24.4,
-                "expression": "happy",
-                "expressionConfidence": 67.3
-            },
-            {
-                "box": {
-                    "x1": 360,
-                    "y1": 449,
-                    "x2": 382,
-                    "y2": 465,
-                    "w": 21,
-                    "h": 15
-                },
-                "confidence": 67.8,
-                "gender": "male",
-                "genderConfidence": 79.1,
-                "age": 35.9,
-                "expression": "neutral",
-                "expressionConfidence": 72.3
-            },
-            {
-                "box": {
-                    "x1": 197,
-                    "y1": 594,
-                    "x2": 244,
-                    "y2": 642,
-                    "w": 46,
-                    "h": 47
-                },
-                "confidence": 58.2,
-                "gender": "female",
-                "genderConfidence": 50.2,
-                "age": 32.1,
-                "expression": "neutral",
-                "expressionConfidence": 61.2
-            }
-        ]
-    },
-    {
-        "ImageWidth": 576,
-        "ImageHeight": 768,
-        "FileExtension": ".jpg",
-        "FileName": "IMG_20230606_175255",
-        "Faces": []
-    },
-    {
-        "ImageWidth": 576,
-        "ImageHeight": 768,
-        "FileExtension": ".jpg",
-        "FileName": "IMG_20230607_202239",
-        "Faces": []
-    },
-    {
-        "ImageWidth": 576,
-        "ImageHeight": 768,
-        "FileExtension": ".jpg",
-        "FileName": "IMG_20230610_174318",
-        "Faces": [
-            {
-                "box": {
-                    "x1": 245,
-                    "y1": 407,
-                    "x2": 278,
-                    "y2": 439,
-                    "w": 33,
-                    "h": 32
-                },
-                "confidence": 50.8,
-                "gender": "male",
-                "genderConfidence": 69.6,
-                "age": 35.4,
-                "expression": "neutral",
-                "expressionConfidence": 94.4
-            }
-        ]
+        "Orientation": "Horizontal (normal)",
+        "Software": "Snapseed 2.0",
+        "ExifImageWidth": 2873,
+        "ExifImageHeight": 2873,
+        "FileExtension": ".jpeg",
+        "FileName": "1699290802587-01"
+    },
+    {
+        "Orientation": "Horizontal (normal)",
+        "ISO": 136,
+        "FNumber": 1.79,
+        "ExposureTime": 0.01,
+        "FocalLength": 4.74,
+        "CreateDate": "2023-04-13T17:36:30.000Z",
+        "ExifImageHeight": 4000,
+        "DateTimeOriginal": "2023-04-13T17:36:30.000Z",
+        "ExifImageWidth": 3000,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230413_193630"
+    },
+    {
+        "Orientation": "Horizontal (normal)",
+        "ISO": 100,
+        "FNumber": 1.79,
+        "ExposureTime": 0.0009596928982725527,
+        "FocalLength": 4.74,
+        "CreateDate": "2023-04-22T07:56:05.000Z",
+        "ExifImageHeight": 4000,
+        "DateTimeOriginal": "2023-04-22T07:56:05.000Z",
+        "ExifImageWidth": 3000,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230422_095605"
+    },
+    {
+        "Orientation": "Horizontal (normal)",
+        "ISO": 100,
+        "FNumber": 1.79,
+        "ExposureTime": 0.0012515644555694619,
+        "FocalLength": 4.74,
+        "CreateDate": "2023-04-22T08:00:03.000Z",
+        "ExifImageHeight": 4000,
+        "DateTimeOriginal": "2023-04-22T08:00:03.000Z",
+        "ExifImageWidth": 3000,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230422_100002"
+    },
+    {
+        "Orientation": "Horizontal (normal)",
+        "ISO": 131,
+        "FNumber": 2.2,
+        "ExposureTime": 0.02,
+        "FocalLength": 1.66,
+        "CreateDate": "2023-04-22T08:00:51.000Z",
+        "ExifImageHeight": 2448,
+        "DateTimeOriginal": "2023-04-22T08:00:51.000Z",
+        "ExifImageWidth": 3264,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230422_100051"
+    },
+    {
+        "Orientation": "Horizontal (normal)",
+        "ISO": 99,
+        "FNumber": 1.79,
+        "ExposureTime": 0.009523809523809525,
+        "FocalLength": 4.74,
+        "CreateDate": "2023-04-22T08:03:22.000Z",
+        "ExifImageHeight": 4000,
+        "DateTimeOriginal": "2023-04-22T08:03:22.000Z",
+        "ExifImageWidth": 3000,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230422_100321"
+    },
+    {
+        "Orientation": "Horizontal (normal)",
+        "ISO": 100,
+        "FNumber": 1.79,
+        "ExposureTime": 0.004672897196261682,
+        "FocalLength": 4.74,
+        "CreateDate": "2023-04-22T08:04:29.000Z",
+        "ExifImageHeight": 4000,
+        "DateTimeOriginal": "2023-04-22T08:04:29.000Z",
+        "ExifImageWidth": 3000,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230422_100429"
+    },
+    {
+        "Orientation": "Horizontal (normal)",
+        "ISO": 103,
+        "FNumber": 1.79,
+        "ExposureTime": 0.0003074085459575776,
+        "FocalLength": 4.74,
+        "CreateDate": "2023-04-22T08:14:30.000Z",
+        "ExifImageHeight": 4000,
+        "DateTimeOriginal": "2023-04-22T08:14:30.000Z",
+        "ExifImageWidth": 3000,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230422_101430"
+    },
+    {
+        "Orientation": "Horizontal (normal)",
+        "ISO": 143,
+        "FNumber": 1.79,
+        "ExposureTime": 0.02,
+        "FocalLength": 4.74,
+        "CreateDate": "2023-04-22T08:16:07.000Z",
+        "ExifImageHeight": 4000,
+        "DateTimeOriginal": "2023-04-22T08:16:07.000Z",
+        "ExifImageWidth": 3000,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230422_101606"
+    },
+    {
+        "Orientation": "Horizontal (normal)",
+        "ISO": 136,
+        "FNumber": 1.79,
+        "ExposureTime": 0.01,
+        "FocalLength": 4.74,
+        "CreateDate": "2023-04-22T08:19:45.000Z",
+        "ExifImageHeight": 3000,
+        "DateTimeOriginal": "2023-04-22T08:19:45.000Z",
+        "ExifImageWidth": 4000,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230422_101944"
+    },
+    {
+        "Orientation": "Horizontal (normal)",
+        "ISO": 154,
+        "FNumber": 1.79,
+        "ExposureTime": 0.030303030303030304,
+        "FocalLength": 4.74,
+        "CreateDate": "2023-04-22T08:22:49.000Z",
+        "ExifImageHeight": 4000,
+        "DateTimeOriginal": "2023-04-22T08:22:49.000Z",
+        "ExifImageWidth": 3000,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230422_102248"
+    },
+    {
+        "Orientation": "Horizontal (normal)",
+        "ISO": 157,
+        "FNumber": 1.79,
+        "ExposureTime": 0.01,
+        "FocalLength": 4.74,
+        "CreateDate": "2023-04-22T08:23:50.000Z",
+        "ExifImageHeight": 4000,
+        "DateTimeOriginal": "2023-04-22T08:23:50.000Z",
+        "ExifImageWidth": 3000,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230422_102350"
+    },
+    {
+        "Orientation": "Horizontal (normal)",
+        "ISO": 144,
+        "FNumber": 1.79,
+        "ExposureTime": 0.030303030303030304,
+        "FocalLength": 4.74,
+        "CreateDate": "2023-04-22T08:25:10.000Z",
+        "ExifImageHeight": 4000,
+        "DateTimeOriginal": "2023-04-22T08:25:10.000Z",
+        "ExifImageWidth": 3000,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230422_102510"
+    },
+    {
+        "Orientation": "Horizontal (normal)",
+        "ISO": 105,
+        "FNumber": 1.79,
+        "ExposureTime": 0.02,
+        "FocalLength": 4.74,
+        "CreateDate": "2023-04-22T08:28:52.000Z",
+        "ExifImageHeight": 3000,
+        "DateTimeOriginal": "2023-04-22T08:28:52.000Z",
+        "ExifImageWidth": 4000,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230422_102852"
+    },
+    {
+        "Orientation": "Horizontal (normal)",
+        "ISO": 148,
+        "FNumber": 2.2,
+        "ExposureTime": 0.030303030303030304,
+        "FocalLength": 1.66,
+        "CreateDate": "2023-04-22T08:30:59.000Z",
+        "ExifImageHeight": 3264,
+        "DateTimeOriginal": "2023-04-22T08:30:59.000Z",
+        "ExifImageWidth": 2448,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230422_103059"
+    },
+    {
+        "Orientation": "Horizontal (normal)",
+        "ISO": 275,
+        "FNumber": 2.2,
+        "ExposureTime": 0.05,
+        "FocalLength": 1.66,
+        "CreateDate": "2023-04-22T08:50:14.000Z",
+        "ExifImageHeight": 2448,
+        "DateTimeOriginal": "2023-04-22T08:50:14.000Z",
+        "ExifImageWidth": 3264,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230422_105013"
+    },
+    {
+        "Orientation": "Horizontal (normal)",
+        "ISO": 106,
+        "FNumber": 2.2,
+        "ExposureTime": 0.02,
+        "FocalLength": 1.66,
+        "CreateDate": "2023-04-22T09:00:23.000Z",
+        "ExifImageHeight": 2448,
+        "DateTimeOriginal": "2023-04-22T09:00:23.000Z",
+        "ExifImageWidth": 3264,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230422_110023"
+    },
+    {
+        "Orientation": "Horizontal (normal)",
+        "ISO": 108,
+        "FNumber": 1.79,
+        "ExposureTime": 0.02,
+        "FocalLength": 4.74,
+        "CreateDate": "2023-04-22T09:01:37.000Z",
+        "ExifImageHeight": 4000,
+        "DateTimeOriginal": "2023-04-22T09:01:37.000Z",
+        "ExifImageWidth": 3000,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230422_110137"
+    },
+    {
+        "Orientation": "Horizontal (normal)",
+        "ISO": 259,
+        "FNumber": 1.79,
+        "ExposureTime": 0.030303030303030304,
+        "FocalLength": 4.74,
+        "CreateDate": "2023-04-22T09:03:00.000Z",
+        "ExifImageHeight": 4000,
+        "DateTimeOriginal": "2023-04-22T09:03:00.000Z",
+        "ExifImageWidth": 3000,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230422_110300"
+    },
+    {
+        "Orientation": "Horizontal (normal)",
+        "ISO": 178,
+        "FNumber": 1.79,
+        "ExposureTime": 0.01,
+        "FocalLength": 4.74,
+        "CreateDate": "2023-04-22T09:07:03.000Z",
+        "ExifImageHeight": 4000,
+        "DateTimeOriginal": "2023-04-22T09:07:03.000Z",
+        "ExifImageWidth": 3000,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230422_110703"
+    },
+    {
+        "Orientation": "Horizontal (normal)",
+        "ISO": 157,
+        "FNumber": 1.79,
+        "ExposureTime": 0.01,
+        "FocalLength": 4.74,
+        "CreateDate": "2023-04-22T09:07:22.000Z",
+        "ExifImageHeight": 4000,
+        "DateTimeOriginal": "2023-04-22T09:07:22.000Z",
+        "ExifImageWidth": 3000,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230422_110721"
+    },
+    {
+        "Orientation": "Horizontal (normal)",
+        "ISO": 122,
+        "FNumber": 1.79,
+        "ExposureTime": 0.01,
+        "FocalLength": 4.74,
+        "CreateDate": "2023-04-22T09:08:03.000Z",
+        "ExifImageHeight": 4000,
+        "DateTimeOriginal": "2023-04-22T09:08:03.000Z",
+        "ExifImageWidth": 3000,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230422_110803"
+    },
+    {
+        "Orientation": "Horizontal (normal)",
+        "ISO": 99,
+        "FNumber": 1.79,
+        "ExposureTime": 0.0010482180293501049,
+        "FocalLength": 4.74,
+        "CreateDate": "2023-04-22T09:18:14.000Z",
+        "ExifImageHeight": 4000,
+        "DateTimeOriginal": "2023-04-22T09:18:14.000Z",
+        "ExifImageWidth": 3000,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230422_111813"
+    },
+    {
+        "Orientation": "Horizontal (normal)",
+        "ISO": 116,
+        "FNumber": 1.79,
+        "ExposureTime": 0.01,
+        "FocalLength": 4.74,
+        "CreateDate": "2023-04-22T09:22:25.000Z",
+        "ExifImageHeight": 4000,
+        "DateTimeOriginal": "2023-04-22T09:22:25.000Z",
+        "ExifImageWidth": 3000,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230422_112224"
+    },
+    {
+        "Orientation": "Horizontal (normal)",
+        "ISO": 179,
+        "FNumber": 1.79,
+        "ExposureTime": 0.030303030303030304,
+        "FocalLength": 4.74,
+        "CreateDate": "2023-04-22T09:23:37.000Z",
+        "ExifImageHeight": 4000,
+        "DateTimeOriginal": "2023-04-22T09:23:37.000Z",
+        "ExifImageWidth": 3000,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230422_112337"
+    },
+    {
+        "Orientation": "Horizontal (normal)",
+        "ISO": 105,
+        "FNumber": 1.79,
+        "ExposureTime": 0.030303030303030304,
+        "FocalLength": 4.74,
+        "CreateDate": "2023-04-22T09:23:55.000Z",
+        "ExifImageHeight": 4000,
+        "DateTimeOriginal": "2023-04-22T09:23:55.000Z",
+        "ExifImageWidth": 3000,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230422_112355"
+    },
+    {
+        "Orientation": "Horizontal (normal)",
+        "ISO": 124,
+        "FNumber": 1.79,
+        "ExposureTime": 0.030303030303030304,
+        "FocalLength": 4.74,
+        "CreateDate": "2023-04-22T09:24:57.000Z",
+        "ExifImageHeight": 3000,
+        "DateTimeOriginal": "2023-04-22T09:24:57.000Z",
+        "ExifImageWidth": 4000,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230422_112457"
+    },
+    {
+        "Orientation": "Horizontal (normal)",
+        "ISO": 118,
+        "FNumber": 1.79,
+        "ExposureTime": 0.02,
+        "FocalLength": 4.74,
+        "CreateDate": "2023-04-22T09:26:44.000Z",
+        "ExifImageHeight": 3000,
+        "DateTimeOriginal": "2023-04-22T09:26:44.000Z",
+        "ExifImageWidth": 4000,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230422_112644"
+    },
+    {
+        "Orientation": "Horizontal (normal)",
+        "ISO": 109,
+        "FNumber": 2.2,
+        "ExposureTime": 0.02,
+        "FocalLength": 1.66,
+        "CreateDate": "2023-04-22T09:33:37.000Z",
+        "ExifImageHeight": 2448,
+        "DateTimeOriginal": "2023-04-22T09:33:37.000Z",
+        "ExifImageWidth": 3264,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230422_113337"
+    },
+    {
+        "Orientation": "Horizontal (normal)",
+        "ISO": 100,
+        "FNumber": 1.79,
+        "ExposureTime": 0.0051813471502590676,
+        "FocalLength": 4.74,
+        "CreateDate": "2023-04-23T14:47:40.000Z",
+        "ExifImageHeight": 3000,
+        "DateTimeOriginal": "2023-04-23T14:47:40.000Z",
+        "ExifImageWidth": 4000,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230423_164740"
+    },
+    {
+        "Orientation": "Horizontal (normal)",
+        "ISO": 100,
+        "FNumber": 1.79,
+        "ExposureTime": 0.00625,
+        "FocalLength": 4.74,
+        "CreateDate": "2023-04-23T14:50:22.000Z",
+        "ExifImageHeight": 3000,
+        "DateTimeOriginal": "2023-04-23T14:50:22.000Z",
+        "ExifImageWidth": 4000,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230423_165022"
+    },
+    {
+        "Orientation": "Horizontal (normal)",
+        "ISO": 131,
+        "FNumber": 2.2,
+        "ExposureTime": 0.01,
+        "FocalLength": 1.66,
+        "CreateDate": "2023-04-23T14:58:37.000Z",
+        "ExifImageHeight": 2448,
+        "DateTimeOriginal": "2023-04-23T14:58:37.000Z",
+        "ExifImageWidth": 3264,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230423_165836"
+    },
+    {
+        "Orientation": "Horizontal (normal)",
+        "ISO": 127,
+        "FNumber": 2.2,
+        "ExposureTime": 0.030303030303030304,
+        "FocalLength": 1.66,
+        "CreateDate": "2023-04-23T14:59:26.000Z",
+        "ExifImageHeight": 3264,
+        "DateTimeOriginal": "2023-04-23T14:59:26.000Z",
+        "ExifImageWidth": 2448,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230423_165925"
+    },
+    {
+        "Orientation": "Horizontal (normal)",
+        "ISO": 99,
+        "FNumber": 2.2,
+        "ExposureTime": 0.007462686567164179,
+        "FocalLength": 1.66,
+        "CreateDate": "2023-04-23T15:02:51.000Z",
+        "ExifImageHeight": 2448,
+        "DateTimeOriginal": "2023-04-23T15:02:51.000Z",
+        "ExifImageWidth": 3264,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230423_170251"
+    },
+    {
+        "Orientation": "Horizontal (normal)",
+        "ISO": 100,
+        "FNumber": 2.2,
+        "ExposureTime": 0.004524886877828055,
+        "FocalLength": 1.66,
+        "CreateDate": "2023-04-23T15:03:32.000Z",
+        "ExifImageHeight": 3264,
+        "DateTimeOriginal": "2023-04-23T15:03:32.000Z",
+        "ExifImageWidth": 2448,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230423_170332"
+    },
+    {
+        "Orientation": "Horizontal (normal)",
+        "ISO": 99,
+        "FNumber": 1.79,
+        "ExposureTime": 0.0049504950495049506,
+        "FocalLength": 4.74,
+        "CreateDate": "2023-04-23T15:04:23.000Z",
+        "ExifImageHeight": 4000,
+        "DateTimeOriginal": "2023-04-23T15:04:23.000Z",
+        "ExifImageWidth": 3000,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230423_170423"
+    },
+    {
+        "Orientation": "Horizontal (normal)",
+        "ISO": 135,
+        "FNumber": 1.79,
+        "ExposureTime": 0.01,
+        "FocalLength": 4.74,
+        "CreateDate": "2023-04-23T15:05:21.000Z",
+        "ExifImageHeight": 4000,
+        "DateTimeOriginal": "2023-04-23T15:05:21.000Z",
+        "ExifImageWidth": 3000,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230423_170520"
+    },
+    {
+        "Orientation": "Horizontal (normal)",
+        "ISO": 99,
+        "FNumber": 1.79,
+        "ExposureTime": 0.0018214936247723133,
+        "FocalLength": 4.74,
+        "CreateDate": "2023-04-23T15:06:48.000Z",
+        "ExifImageHeight": 4000,
+        "DateTimeOriginal": "2023-04-23T15:06:48.000Z",
+        "ExifImageWidth": 3000,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230423_170648"
+    },
+    {
+        "Orientation": "Horizontal (normal)",
+        "ISO": 99,
+        "FNumber": 1.79,
+        "ExposureTime": 0.0004997501249375312,
+        "FocalLength": 4.74,
+        "CreateDate": "2023-04-23T15:10:06.000Z",
+        "ExifImageHeight": 3000,
+        "DateTimeOriginal": "2023-04-23T15:10:06.000Z",
+        "ExifImageWidth": 4000,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230423_171006"
+    },
+    {
+        "Orientation": "Horizontal (normal)",
+        "ISO": 100,
+        "FNumber": 1.79,
+        "ExposureTime": 0.001594896331738437,
+        "FocalLength": 4.74,
+        "CreateDate": "2023-04-23T15:13:20.000Z",
+        "ExifImageHeight": 4000,
+        "DateTimeOriginal": "2023-04-23T15:13:20.000Z",
+        "ExifImageWidth": 3000,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230423_171320"
+    },
+    {
+        "Orientation": "Horizontal (normal)",
+        "ISO": 1238,
+        "FNumber": 1.79,
+        "ExposureTime": 0.058823529411764705,
+        "FocalLength": 4.74,
+        "CreateDate": "2023-04-24T06:58:57.000Z",
+        "ExifImageHeight": 4000,
+        "DateTimeOriginal": "2023-04-24T06:58:57.000Z",
+        "ExifImageWidth": 3000,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230424_085857"
+    },
+    {
+        "Orientation": "Horizontal (normal)",
+        "ISO": 100,
+        "FNumber": 1.79,
+        "ExposureTime": 0.0029498525073746312,
+        "FocalLength": 4.74,
+        "CreateDate": "2023-05-01T16:03:26.000Z",
+        "ExifImageHeight": 4000,
+        "DateTimeOriginal": "2023-05-01T16:03:26.000Z",
+        "ExifImageWidth": 3000,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230501_180326"
+    },
+    {
+        "Orientation": "Horizontal (normal)",
+        "ISO": 101,
+        "FNumber": 1.79,
+        "ExposureTime": 0.000578368999421631,
+        "FocalLength": 4.74,
+        "CreateDate": "2023-05-07T12:58:00.000Z",
+        "ExifImageHeight": 4000,
+        "DateTimeOriginal": "2023-05-07T12:58:00.000Z",
+        "ExifImageWidth": 3000,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230507_145759"
+    },
+    {
+        "Orientation": "Horizontal (normal)",
+        "ISO": 100,
+        "FNumber": 1.79,
+        "ExposureTime": 0.0004589261128958238,
+        "FocalLength": 4.74,
+        "CreateDate": "2023-05-13T12:15:21.000Z",
+        "ExifImageHeight": 3000,
+        "DateTimeOriginal": "2023-05-13T12:15:21.000Z",
+        "ExifImageWidth": 4000,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230513_141521"
+    },
+    {
+        "Orientation": "Horizontal (normal)",
+        "ISO": 100,
+        "FNumber": 1.79,
+        "ExposureTime": 0.0011299435028248588,
+        "FocalLength": 4.74,
+        "CreateDate": "2023-05-13T13:01:02.000Z",
+        "ExifImageHeight": 4000,
+        "DateTimeOriginal": "2023-05-13T13:01:02.000Z",
+        "ExifImageWidth": 3000,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230513_150102"
+    },
+    {
+        "Orientation": "Horizontal (normal)",
+        "ISO": 102,
+        "FNumber": 1.79,
+        "ExposureTime": 0.0003053435114503817,
+        "FocalLength": 4.74,
+        "CreateDate": "2023-05-13T13:17:30.000Z",
+        "ExifImageHeight": 3000,
+        "DateTimeOriginal": "2023-05-13T13:17:30.000Z",
+        "ExifImageWidth": 4000,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230513_151730"
+    },
+    {
+        "Orientation": "Horizontal (normal)",
+        "ISO": 98,
+        "FNumber": 2.2,
+        "ExposureTime": 0.0004512635379061372,
+        "FocalLength": 1.66,
+        "CreateDate": "2023-05-13T13:17:47.000Z",
+        "ExifImageHeight": 2448,
+        "DateTimeOriginal": "2023-05-13T13:17:47.000Z",
+        "ExifImageWidth": 3264,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230513_151746"
+    },
+    {
+        "Orientation": "Horizontal (normal)",
+        "ISO": 97,
+        "FNumber": 1.79,
+        "ExposureTime": 0.0003816793893129771,
+        "FocalLength": 4.74,
+        "CreateDate": "2023-05-13T13:34:03.000Z",
+        "ExifImageHeight": 3000,
+        "DateTimeOriginal": "2023-05-13T13:34:03.000Z",
+        "ExifImageWidth": 4000,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230513_153403"
+    },
+    {
+        "Orientation": "Horizontal (normal)",
+        "ISO": 98,
+        "FNumber": 1.79,
+        "ExposureTime": 0.00032133676092544985,
+        "FocalLength": 4.74,
+        "CreateDate": "2023-05-13T13:34:17.000Z",
+        "ExifImageHeight": 4000,
+        "DateTimeOriginal": "2023-05-13T13:34:17.000Z",
+        "ExifImageWidth": 3000,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230513_153417"
+    },
+    {
+        "Orientation": "Horizontal (normal)",
+        "ISO": 216,
+        "FNumber": 1.79,
+        "ExposureTime": 0.030303030303030304,
+        "FocalLength": 4.74,
+        "CreateDate": "2023-05-13T13:56:50.000Z",
+        "ExifImageHeight": 4000,
+        "DateTimeOriginal": "2023-05-13T13:56:50.000Z",
+        "ExifImageWidth": 3000,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230513_155649"
+    },
+    {
+        "Orientation": "Horizontal (normal)",
+        "ISO": 500,
+        "FNumber": 1.79,
+        "ExposureTime": 0.04,
+        "FocalLength": 4.74,
+        "CreateDate": "2023-05-13T18:34:26.000Z",
+        "ExifImageHeight": 4000,
+        "DateTimeOriginal": "2023-05-13T18:34:26.000Z",
+        "ExifImageWidth": 3000,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230513_203425"
+    },
+    {
+        "Orientation": "Horizontal (normal)",
+        "ISO": 100,
+        "FNumber": 1.79,
+        "ExposureTime": 0.00048007681228996637,
+        "FocalLength": 4.74,
+        "CreateDate": "2023-05-14T13:43:53.000Z",
+        "ExifImageHeight": 3000,
+        "DateTimeOriginal": "2023-05-14T13:43:53.000Z",
+        "ExifImageWidth": 4000,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230514_154353"
+    },
+    {
+        "Orientation": "Horizontal (normal)",
+        "ISO": 121,
+        "FNumber": 1.79,
+        "ExposureTime": 0.030303030303030304,
+        "FocalLength": 4.74,
+        "CreateDate": "2023-05-15T19:56:57.000Z",
+        "ExifImageHeight": 4000,
+        "DateTimeOriginal": "2023-05-15T19:56:57.000Z",
+        "ExifImageWidth": 3000,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230515_215656"
+    },
+    {
+        "Orientation": "Horizontal (normal)",
+        "ISO": 100,
+        "FNumber": 1.79,
+        "ExposureTime": 0.0017331022530329288,
+        "FocalLength": 4.74,
+        "CreateDate": "2023-05-16T13:33:59.000Z",
+        "ExifImageHeight": 4000,
+        "DateTimeOriginal": "2023-05-16T13:33:59.000Z",
+        "ExifImageWidth": 3000,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230516_153359"
+    },
+    {
+        "Orientation": "Horizontal (normal)",
+        "ISO": 185,
+        "FNumber": 1.79,
+        "ExposureTime": 0.030303030303030304,
+        "FocalLength": 4.74,
+        "CreateDate": "2023-05-16T14:57:36.000Z",
+        "ExifImageHeight": 4000,
+        "DateTimeOriginal": "2023-05-16T14:57:36.000Z",
+        "ExifImageWidth": 3000,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230516_165735"
+    },
+    {
+        "Orientation": "Horizontal (normal)",
+        "ISO": 99,
+        "FNumber": 1.79,
+        "ExposureTime": 0.0016339869281045752,
+        "FocalLength": 4.74,
+        "CreateDate": "2023-05-19T12:41:11.000Z",
+        "ExifImageHeight": 4000,
+        "DateTimeOriginal": "2023-05-19T12:41:11.000Z",
+        "ExifImageWidth": 3000,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230519_144110"
+    },
+    {
+        "Orientation": "Horizontal (normal)",
+        "ISO": 99,
+        "FNumber": 1.79,
+        "ExposureTime": 0.00031201248049921997,
+        "FocalLength": 4.74,
+        "CreateDate": "2023-05-20T12:55:29.000Z",
+        "ExifImageHeight": 3000,
+        "DateTimeOriginal": "2023-05-20T12:55:29.000Z",
+        "ExifImageWidth": 4000,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230520_145529"
+    },
+    {
+        "Orientation": "Horizontal (normal)",
+        "ISO": 98,
+        "FNumber": 1.79,
+        "ExposureTime": 0.0003616636528028933,
+        "FocalLength": 4.74,
+        "CreateDate": "2023-05-20T13:06:46.000Z",
+        "ExifImageHeight": 4000,
+        "DateTimeOriginal": "2023-05-20T13:06:46.000Z",
+        "ExifImageWidth": 3000,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230520_150646"
+    },
+    {
+        "Orientation": "Horizontal (normal)",
+        "ISO": 101,
+        "FNumber": 1.79,
+        "ExposureTime": 0.0003563791874554526,
+        "FocalLength": 4.74,
+        "CreateDate": "2023-05-20T13:06:51.000Z",
+        "ExifImageHeight": 4000,
+        "DateTimeOriginal": "2023-05-20T13:06:51.000Z",
+        "ExifImageWidth": 3000,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230520_150650"
+    },
+    {
+        "Orientation": "Horizontal (normal)",
+        "ISO": 101,
+        "FNumber": 1.79,
+        "ExposureTime": 0.00034602076124567473,
+        "FocalLength": 4.74,
+        "CreateDate": "2023-05-20T13:06:57.000Z",
+        "ExifImageHeight": 4000,
+        "DateTimeOriginal": "2023-05-20T13:06:57.000Z",
+        "ExifImageWidth": 3000,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230520_150657"
+    },
+    {
+        "Orientation": "Horizontal (normal)",
+        "ISO": 98,
+        "FNumber": 1.79,
+        "ExposureTime": 0.00035112359550561797,
+        "FocalLength": 4.74,
+        "CreateDate": "2023-05-20T13:06:59.000Z",
+        "ExifImageHeight": 4000,
+        "DateTimeOriginal": "2023-05-20T13:06:59.000Z",
+        "ExifImageWidth": 3000,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230520_150658"
+    },
+    {
+        "Orientation": "Horizontal (normal)",
+        "ISO": 98,
+        "FNumber": 1.79,
+        "ExposureTime": 0.00037257824143070045,
+        "FocalLength": 4.74,
+        "CreateDate": "2023-05-20T13:07:08.000Z",
+        "ExifImageHeight": 4000,
+        "DateTimeOriginal": "2023-05-20T13:07:08.000Z",
+        "ExifImageWidth": 3000,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230520_150707"
+    },
+    {
+        "Orientation": "Horizontal (normal)",
+        "ISO": 101,
+        "FNumber": 1.79,
+        "ExposureTime": 0.0003894080996884735,
+        "FocalLength": 4.74,
+        "CreateDate": "2023-05-25T16:33:45.000Z",
+        "ExifImageHeight": 4000,
+        "DateTimeOriginal": "2023-05-25T16:33:45.000Z",
+        "ExifImageWidth": 3000,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230525_183345"
+    },
+    {
+        "Orientation": "Horizontal (normal)",
+        "ISO": 99,
+        "FNumber": 1.79,
+        "ExposureTime": 0.0004789272030651341,
+        "FocalLength": 4.74,
+        "CreateDate": "2023-05-27T14:26:12.000Z",
+        "ExifImageHeight": 4000,
+        "DateTimeOriginal": "2023-05-27T14:26:12.000Z",
+        "ExifImageWidth": 3000,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230527_162611"
+    },
+    {
+        "Orientation": "Horizontal (normal)",
+        "ISO": 123,
+        "FNumber": 1.79,
+        "ExposureTime": 0.01,
+        "FocalLength": 4.74,
+        "CreateDate": "2023-05-29T13:54:26.000Z",
+        "ExifImageHeight": 3000,
+        "DateTimeOriginal": "2023-05-29T13:54:26.000Z",
+        "ExifImageWidth": 4000,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230529_155425"
+    },
+    {
+        "Orientation": "Horizontal (normal)",
+        "ISO": 120,
+        "FNumber": 1.79,
+        "ExposureTime": 0.01,
+        "FocalLength": 4.74,
+        "CreateDate": "2023-05-29T13:55:49.000Z",
+        "ExifImageHeight": 3000,
+        "DateTimeOriginal": "2023-05-29T13:55:49.000Z",
+        "ExifImageWidth": 4000,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230529_155549"
+    },
+    {
+        "Orientation": "Horizontal (normal)",
+        "ISO": 99,
+        "FNumber": 1.79,
+        "ExposureTime": 0.009523809523809525,
+        "FocalLength": 4.74,
+        "CreateDate": "2023-05-29T13:56:32.000Z",
+        "ExifImageHeight": 3000,
+        "DateTimeOriginal": "2023-05-29T13:56:32.000Z",
+        "ExifImageWidth": 4000,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230529_155632"
+    },
+    {
+        "Orientation": "Horizontal (normal)",
+        "ISO": 163,
+        "FNumber": 1.79,
+        "ExposureTime": 0.01,
+        "FocalLength": 4.74,
+        "CreateDate": "2023-06-03T11:35:39.000Z",
+        "ExifImageHeight": 3000,
+        "DateTimeOriginal": "2023-06-03T11:35:39.000Z",
+        "ExifImageWidth": 4000,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230603_133538"
+    },
+    {
+        "Orientation": "Horizontal (normal)",
+        "ISO": 139,
+        "FNumber": 1.79,
+        "ExposureTime": 0.01,
+        "FocalLength": 4.74,
+        "CreateDate": "2023-06-03T11:36:31.000Z",
+        "ExifImageHeight": 3000,
+        "DateTimeOriginal": "2023-06-03T11:36:31.000Z",
+        "ExifImageWidth": 4000,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230603_133631"
+    },
+    {
+        "Orientation": "Horizontal (normal)",
+        "ISO": 100,
+        "FNumber": 1.79,
+        "ExposureTime": 0.0007112375533428165,
+        "FocalLength": 4.74,
+        "CreateDate": "2023-06-03T12:20:00.000Z",
+        "ExifImageHeight": 4000,
+        "DateTimeOriginal": "2023-06-03T12:20:00.000Z",
+        "ExifImageWidth": 3000,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230603_141959"
+    },
+    {
+        "Orientation": "Horizontal (normal)",
+        "ISO": 99,
+        "FNumber": 1.79,
+        "ExposureTime": 0.000791765637371338,
+        "FocalLength": 4.74,
+        "CreateDate": "2023-06-03T12:59:17.000Z",
+        "ExifImageHeight": 3000,
+        "DateTimeOriginal": "2023-06-03T12:59:17.000Z",
+        "ExifImageWidth": 4000,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230603_145916"
+    },
+    {
+        "Orientation": "Horizontal (normal)",
+        "ISO": 100,
+        "FNumber": 1.79,
+        "ExposureTime": 0.0003650967506389193,
+        "FocalLength": 4.74,
+        "CreateDate": "2023-06-03T13:03:02.000Z",
+        "ExifImageHeight": 4000,
+        "DateTimeOriginal": "2023-06-03T13:03:02.000Z",
+        "ExifImageWidth": 3000,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230603_150301"
+    },
+    {
+        "Orientation": "Horizontal (normal)",
+        "ISO": 99,
+        "FNumber": 1.79,
+        "ExposureTime": 0.0004889975550122249,
+        "FocalLength": 4.74,
+        "CreateDate": "2023-06-03T13:20:44.000Z",
+        "ExifImageHeight": 3000,
+        "DateTimeOriginal": "2023-06-03T13:20:44.000Z",
+        "ExifImageWidth": 4000,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230603_152044"
+    },
+    {
+        "Orientation": "Horizontal (normal)",
+        "ISO": 101,
+        "FNumber": 1.79,
+        "ExposureTime": 0.0003780718336483932,
+        "FocalLength": 4.74,
+        "CreateDate": "2023-06-03T13:27:29.000Z",
+        "ExifImageHeight": 3000,
+        "DateTimeOriginal": "2023-06-03T13:27:29.000Z",
+        "ExifImageWidth": 4000,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230603_152729"
+    },
+    {
+        "Orientation": "Horizontal (normal)",
+        "ISO": 99,
+        "FNumber": 1.79,
+        "ExposureTime": 0.0017064846416382253,
+        "FocalLength": 4.74,
+        "CreateDate": "2023-06-03T13:46:57.000Z",
+        "ExifImageHeight": 4000,
+        "DateTimeOriginal": "2023-06-03T13:46:57.000Z",
+        "ExifImageWidth": 3000,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230603_154657"
+    },
+    {
+        "Orientation": "Horizontal (normal)",
+        "ISO": 101,
+        "FNumber": 1.79,
+        "ExposureTime": 0.0005470459518599562,
+        "FocalLength": 4.74,
+        "CreateDate": "2023-06-03T13:59:45.000Z",
+        "ExifImageHeight": 3000,
+        "DateTimeOriginal": "2023-06-03T13:59:45.000Z",
+        "ExifImageWidth": 4000,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230603_155944"
+    },
+    {
+        "Orientation": "Horizontal (normal)",
+        "ISO": 99,
+        "FNumber": 1.79,
+        "ExposureTime": 0.0007575757575757576,
+        "FocalLength": 4.74,
+        "CreateDate": "2023-06-03T15:03:51.000Z",
+        "ExifImageHeight": 4000,
+        "DateTimeOriginal": "2023-06-03T15:03:51.000Z",
+        "ExifImageWidth": 3000,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230603_170350"
+    },
+    {
+        "Orientation": "Horizontal (normal)",
+        "ISO": 194,
+        "FNumber": 1.79,
+        "ExposureTime": 0.030303030303030304,
+        "FocalLength": 4.74,
+        "CreateDate": "2023-06-06T15:52:55.000Z",
+        "ExifImageHeight": 4000,
+        "DateTimeOriginal": "2023-06-06T15:52:55.000Z",
+        "ExifImageWidth": 3000,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230606_175255"
+    },
+    {
+        "Orientation": "Horizontal (normal)",
+        "ISO": 175,
+        "FNumber": 1.79,
+        "ExposureTime": 0.01,
+        "FocalLength": 4.74,
+        "CreateDate": "2023-06-07T18:22:39.000Z",
+        "ExifImageHeight": 4000,
+        "DateTimeOriginal": "2023-06-07T18:22:39.000Z",
+        "ExifImageWidth": 3000,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230607_202239"
+    },
+    {
+        "Orientation": "Horizontal (normal)",
+        "ISO": 100,
+        "FNumber": 2.2,
+        "ExposureTime": 0.0005633802816901409,
+        "FocalLength": 1.66,
+        "CreateDate": "2023-06-10T15:43:19.000Z",
+        "ExifImageHeight": 3264,
+        "DateTimeOriginal": "2023-06-10T15:43:19.000Z",
+        "ExifImageWidth": 2448,
+        "FileExtension": ".jpg",
+        "FileName": "IMG_20230610_174318"
     }
 ]
