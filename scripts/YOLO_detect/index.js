@@ -82,9 +82,9 @@ async function prepare_input(sharp_img) {
 	const g = []
 	const b = []
 	for (let i=0; i<pixels.length; i+=3) {
-		r.push( pixels[i    ]/255.0 )
-		g.push( pixels[i + 1]/255.0 )
-		b.push( pixels[i + 2]/255.0 )
+		r.push( pixels[i  ]/255.0 )
+		g.push( pixels[i+1]/255.0 )
+		b.push( pixels[i+2]/255.0 )
 	}
 	return [...r, ...g, ...b]
 }
