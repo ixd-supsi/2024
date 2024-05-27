@@ -9,7 +9,7 @@ import { scanFolder, getImagePath, loadSharpImage, cropAndSaveSharpImage } from 
 const IMG_PATH       = getImagePath()    // percorso delle cartella delle immagini (relativo a questo script)
 const CROP_PATH      = path.join(IMG_PATH, "..", "yolo_crop")
 const JSON_PATH      = path.join(IMG_PATH, "..", "data_yolo.json") // Nome del file per il salvataggio dei dati
-const SALVA_CROP     = true              // salvare le immagini croppate?
+const SALVA_CROP     = true             // salvare le immagini croppate?
 const CROP_SIZE      = 256               // ridimensiona crop (lasciare “null” per dimensione originale)
 
 const PROB_THRESHOLD = 0.5               // thresold per detect di un oggetto
@@ -54,7 +54,6 @@ async function run() {
 			let idx = 0
 			for (const o of Objects) {
 				const output_path = path.join(CROP_PATH, FileName + "_" + idx++ + ".jpg")
-				console.log(o.box)
 				cropAndSaveSharpImage(sharp_img.image, o.box, output_path, CROP_SIZE)
 			}
 		}
@@ -76,9 +75,7 @@ async function run() {
 }
 
 async function prepare_input(sharp_img) {
-	const pixels = await sharp_img
-		.clone()
-		.removeAlpha()
+	const pixels = await sharp_img.clone().removeAlpha()
 		.resize({width:YOLO_IMAGE_W, height:YOLO_IMAGE_H, fit:'fill'})
 		.raw()
 		.toBuffer()
