@@ -16,30 +16,3 @@ export function getImagePath() {
 export function scanFolder(path) {
 	return fs.readdirSync(path).filter( e => FILES_DA_IGNORARE.indexOf(e) == -1)
 }
-
-// export async function loadSharpImage(image_path) {
-// 	const image = sharp(image_path)
-// 	const md = await image.metadata()
-// 	return {
-// 		image, // align based on metadata
-// 		md
-//  	}
-// }
-
-// export async function cropAndSaveSharpImage(img, box, savePath, cropSize = null) {
-// 	try {
-// 		if (cropSize) {
-// 			img.clone().extract(box)
-// 			   .resize(cropSize, cropSize, {fit: 'inside'})
-// 			   .rotate()
-// 			   .toFile(savePath)
-
-// 		} else {
-// 			img.clone().extract(box)
-// 			   .rotate()
-// 			   .toFile(savePath)
-// 		}
-// 	} catch (e) {
-// 		console.log("Errore nel file: " + savePath)
-// 	}
-// }
