@@ -1,0 +1,55 @@
+[
+    {
+        "FileExtension": ".JPG",
+        "FileName": "00030B27-9C1D-4C15-9CC8-F132983AA217_1_105_c",
+        "EXIF": {
+            "ISO": 32,
+            "CreateDate": "2021-09-11T21:52:33.000Z",
+            "FileExtension": ".JPG",
+            "FileName": "00030B27-9C1D-4C15-9CC8-F132983AA217_1_105_c",
+            "Ora": {
+                "D": 11,
+                "T": 8,
+                "Y": 2021,
+                "H": 23,
+                "M": 52,
+                "S": 33
+            }
+        }
+    },
+    {
+        "FileExtension": ".JPG",
+        "FileName": "0015C70F-8752-478D-BFD3-FF53F604B327",
+        "EXIF": {
+            "ISO": 125,
+            "CreateDate": "2022-02-10T11:12:24.000Z",
+            "FileExtension": ".JPG",
+            "FileName": "0015C70F-8752-478D-BFD3-FF53F604B327",
+            "Ora": {
+                "D": 10,
+                "T": 1,
+                "Y": 2022,
+                "H": 12,
+                "M": 12,
+                "S": 24
+            }
+        }
+    },
+    {
+        "FileExtension": ".JPG",
+        "FileName": "001EE508-02BD-4369-B010-E8085BF68910_1_105_c",
+        "EXIF": {
+            "ISO": 2500,
+            "CreateDate": "2022-02-15T06:12:19.000Z",
+            "FileExtension": ".JPG",
+            "FileName": "001EE508-02BD-4369-B010-E8085BF68910_1_105_c",
+            "Ora": {
+                "D": 15,
+                "T": 1,
+                "Y": 2022,
+                "H": 7,
+                "M": 12,
+                "S": 19
+            }
+        }
+    },

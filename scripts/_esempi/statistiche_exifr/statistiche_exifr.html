@@ -13,10 +13,29 @@
 
     <script>
         const path_to_json = "dati/data.json"
-        const occurrences = {};
+
+        const dates = {};
+        const hours = {};
+        const days_week = {};
+        const days = {};
 
         output_container = document.getElementById('output')
         let output = ''
+
+        function display_table(data){
+            let output = ''
+            output += '<table>'
+            for (const key in data) {
+                if (data.hasOwnProperty(key)) {
+                    output += '<tr>'
+                    output += '<td>' + key + '</td>'
+                    output += '<td>' + data[key] + '</td>'
+                    output += '</tr>'
+                }
+            }
+            output += '</table><br/>'
+            return output
+        }
 
         fetch(path_to_json)
             .then(res => res.json())
@@ -30,34 +49,49 @@
                         let ISO = item.ISO
 
                         let date_ = new Date(date);
+                        const the_date = date.substring(0,10)
                         const hour = date_.getHours();
-                        // const minute = date_.getMinutes();
+                        const day = date_.getDate();
+                        const day_of_week = date_.getDay();
 
-                        if (occurrences[hour]) {
-                            occurrences[hour]++;
+                        // conta giorni di calendario
+                        if (dates[the_date]) {
+                            dates[the_date]++;
                         } else {
-                            occurrences[hour] = 1;
+                            dates[the_date] = 1;
+                        }
+
+                        // conta giorni del mese
+                        if (days[day]) {
+                            days[day]++;
+                        } else {
+                            days[day] = 1;
+                        }
+
+                        // conta giorni della settimana
+                        if (days_week[day_of_week]) {
+                            days_week[day_of_week]++;
+                        } else {
+                            days_week[day_of_week] = 1;
+                        }
+
+                        if (hours[hour]) {
+                            hours[hour]++;
+                        } else {
+                            hours[hour] = 1;
                         }
                     }
                 }
-                console.log(occurrences)
 
-                output += '<table>'
-
-                for (const key in occurrences) {
-                    if (occurrences.hasOwnProperty(key)) {
-
-                        output += '<tr>'
-                        output += '<td>' + key + '</td>'
-                        output += '<td>' + occurrences[key] + '</td>'
-                        output += '</tr>'
-
-                    }
-                }
-
-                output += '</table>'
+                console.log(dates)
+                console.log(days)
+                console.log(days_week)
+                console.log(hours)
                 
-                output_container.innerHTML = output
+                output_container.innerHTML += 'date<br/>' + display_table(dates)
+                output_container.innerHTML += 'giorni del mese<br/>' + display_table(days)
+                output_container.innerHTML += 'giorni della settimana (domenica = 0, lunedì = 1, ...)<br/>' + display_table(days_week)
+                output_container.innerHTML += 'ore<br/>' + display_table(hours)
             })
 
     </script>
