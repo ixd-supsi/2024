@@ -50,7 +50,7 @@ async function run() {
 		const img_buf       = await sharp_img.image.toBuffer()
 		const tensor        = getTensor(img_buf)
 		const result        = await detect(tensor, optionsSSDMobileNet)
-		const Faces         = result.map(getFormattedData)
+		const Faces         = result.map( f => getFormattedData(f, sharp_img.width, sharp_img.height))
 
 		// print
 		console.log('File: ' + file + ', numero di volti: '+ result.length)
@@ -115,15 +115,25 @@ function getTensor(buffer) {
 	return tensor
 }
 
-function getFormattedData(face) {
+function getFormattedData(face, image_width, image_height) {
 	const expressions = Object.entries(face.expressions).reduce((acc, val) => ((val[1] > acc[1]) ? val : acc), ['', 0])
+
+	const box =  {
+		left   : Math.max(0, Math.floor(face.alignedRect._box._x)), // correzione arrotondamenti
+		top    : Math.max(0, Math.floor(face.alignedRect._box._y)), //
+		width  : Math.floor(face.alignedRect._box._width),
+		height : Math.floor(face.alignedRect._box._height),
+	}
+
+	// Fix per arrotondamenti misure (~ +/- 3px oltre i bordo)
+	const dx = (box.left + box.width) - image_width
+	if (dx > 0) box.width -= dx
+
+	const dy =  (box.top + box.height) - image_height
+	if (dy > 0) box.height -= dy
+
 	return {
-		box : {
-			left   : Math.floor(face.alignedRect._box._x),
-			top    : Math.floor(face.alignedRect._box._y),
-			width  : Math.floor(face.alignedRect._box._width),
-			height : Math.floor(face.alignedRect._box._height),
-		},
+		box,
 		confidence : Math.round(face.detection._score * 1000) / 10,
 		gender : face.gender,
 		genderConfidence : Math.round(face.genderProbability * 1000) / 10,
@@ -146,16 +156,3 @@ async function detect(tensor, opts) {
 		return []
 	}
 }
-
-// function detectPromise(tensor, opts) {
-// 	return new Promise((resolve) => detectAllFaces(tensor, opts)
-// 		// .withFaceLandmarks()
-// 		.withFaceExpressions()
-// 		.withFaceDescriptors()
-// 		.withAgeAndGender()
-// 		.then((res) => resolve(res))
-// 		.catch((err) => {
-// 			console.log('Caught error', err.message)
-// 			resolve([])
-// 		}))
-// }
