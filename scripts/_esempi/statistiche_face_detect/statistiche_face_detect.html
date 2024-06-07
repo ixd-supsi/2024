@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statistiche immagini</title>
+</head>
+<body>
+
+    <div id="box">
+        <pre id="output"></pre>
+    </div>
+
+    <script>
+        const path_to_json = "dati/dati.json"
+
+        const age = {};
+        const expression = {};
+        const gender = {};
+        let total_faces = 0
+        let total_ages = 0
+        let males = 0
+        let females = 0
+
+        let total_ages_male = 0
+        let total_ages_female = 0
+
+        output_container = document.getElementById('output')
+        let output = ''
+
+        function display_table(data){
+            let output = ''
+            output += '<table>'
+            for (const key in data) {
+                if (data.hasOwnProperty(key)) {
+                    output += '<tr>'
+                    output += '<td>' + key + '</td>'
+                    output += '<td>' + data[key] + '</td>'
+                    output += '</tr>'
+                }
+            }
+            output += '</table><br/>'
+            return output
+        }
+
+        fetch(path_to_json)
+            .then(res => res.json())
+            .then(data => {
+                // console.log(data)
+
+                for (const item of data) {
+                    
+                    if (item.Faces.length > 0 ){
+                        // console.log(item)
+
+                        for (const face of item.Faces) {
+                            console.log(face)
+
+                            total_faces += 1
+
+                            // estrapola le età
+                            the_age = Math.round(face.age)
+                            total_ages += the_age 
+
+                            if (age[the_age]) {
+                                age[the_age]++;
+                            } else {
+                                age[the_age] = 1;
+                            }
+
+                            // estrapola le espressioni
+                            the_expression = face.expression
+
+                            if (expression[the_expression]) {
+                                expression[the_expression]++;
+                            } else {
+                                expression[the_expression] = 1;
+                            }
+
+                            // estrapola il genere
+                            the_gender = face.gender
+
+                            if (the_gender == 'male'){
+                                males += 1
+                                total_ages_male += the_age
+                            }
+                            else if (the_gender == 'female') {
+                                females += 1
+                                total_ages_female += the_age
+                            }
+
+                            if (gender[the_gender]) {
+                                gender[the_gender]++;
+                            } else {
+                                gender[the_gender] = 1;
+                            }
+
+                        }
+                    }
+                }
+
+                output += '<p>volti totali: ' + total_faces + '</p>'
+                output += '<p>età media complessiva: ' + Math.round(total_ages/total_faces) + ' anni</p>'
+                output += '<p>età media uomini: ' + Math.round(total_ages_male/males) + ' anni</p>'
+                output += '<p>età media donne: ' + Math.round(total_ages_female/females) + ' anni</p>'
+
+                // mostra tutte età
+                output += '<table>'
+                output += '<thead><tr><td>età</td><td>n.</td></tr></thead>'
+                for (const key in age) {
+                    if (age.hasOwnProperty(key)) {
+                        // console.log(key)
+
+                        output += '<tr>'
+                        output += '<td>' + key + '</td>'
+                        output += '<td>' + age[key] + '</td>'
+                        output += '</tr>'
+                    }
+                }
+                output += '</table>'
+
+                output += '<br/>'
+
+                // mostra tutte espressioni
+                output += '<table>'
+                output += '<thead><tr><td>espressione</td><td>n.</td></tr></thead>'
+                for (const key in expression) {
+                    if (expression.hasOwnProperty(key)) {
+                        // console.log(key)
+
+                        output += '<tr>'
+                        output += '<td>' + key + '</td>'
+                        output += '<td>' + expression[key] + '</td>'
+                        output += '</tr>'
+                    }
+                }
+                output += '</table>'
+
+                output += '<br/>'
+
+                // mostra tutti i generi
+                output += '<table>'
+                output += '<thead><tr><td>genere</td><td>n.</td></tr></thead>'
+                for (const key in gender) {
+                    if (gender.hasOwnProperty(key)) {
+                        // console.log(key)
+
+                        output += '<tr>'
+                        output += '<td>' + key + '</td>'
+                        output += '<td>' + gender[key] + '</td>'
+                        output += '</tr>'
+                    }
+                }
+                output += '</table>'
+
+
+                output_container.innerHTML = output
+                // console.log(age)
+            })
+
+    </script>
+</body>
+</html>

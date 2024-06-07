@@ -14,7 +14,7 @@
     <script>
         const path_to_json = "dati/data.json"
 
-        let count_images = 0
+        let count_images = 0;
         let count_nofeat_img = 0
         let count_features = 0
 
@@ -29,12 +29,18 @@
                 // console.log(data)
 
                 for (const item of data) {
-                    // console.log(item)
+                    count_images += 1
 
                     let obj = item.Objects
+
+                    if (item.Objects && item.Objects.length > 0) {
+                        for (const obj of item.Objects) {
+                            console.log(obj.label);
+                        }
+                    }
                 
                     if (obj && obj.length > 0){
-                        // console.log(obj)
+                        count_features += 1
 
                         label = obj[0].label
 
@@ -44,9 +50,11 @@
                             occurrences[label] = 1;
                         }
                     }
+                    else {
+                        count_nofeat_img += 1
+                    }
                 }
-                console.log(occurrences)
-
+                
                 output += '<table>'
 
                 for (const key in occurrences) {
@@ -57,16 +65,28 @@
                         output += '<td>' + key + '</td>'
                         output += '<td>' + occurrences[key] + '</td>'
                         output += '</tr>'
-
                     }
                 }
 
                 output += '</table>'
+
+                output += '<br/><table>'
+                output += '<tr>'
+                output += '<td>total images</td>' 
+                output += '<td>' + count_images + '<td/>'
+                output += '</tr>'
+                output += '<td>images with no features</td>' 
+                output += '<td>' + count_nofeat_img + '<td/>'
+                output += '<tr>'
+                output += '<td>total features</td>' 
+                output += '<td>' + count_features + '<td/>'
+                output += '</tr>'
+                output += '</table>'
                 
                 output_container.innerHTML = output
-                console.log(output_container)
+            
+                console.log(occurrences)           
             })
-
     </script>
 </body>
 </html>
