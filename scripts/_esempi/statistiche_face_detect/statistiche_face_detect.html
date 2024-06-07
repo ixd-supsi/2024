@@ -18,6 +18,7 @@
         const expression = {};
         const gender = {};
         let total_faces = 0
+        let total_ages = 0
 
         output_container = document.getElementById('output')
         let output = ''
@@ -54,6 +55,7 @@
 
                             // estrapola le età
                             the_age = Math.round(face.age)
+                            total_ages += the_age 
 
                             if (age[the_age]) {
                                 age[the_age]++;
@@ -84,6 +86,7 @@
                 }
 
                 output += '<p>volti totali: ' + total_faces + '</p>'
+                output += '<p>età media: ' + Math.round(total_ages/total_faces) + ' anni</p>'
 
                 // mostra tutte età
                 output += '<table>'
