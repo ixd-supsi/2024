@@ -17,7 +17,7 @@
         const age = {};
         const expression = {};
         const gender = {};
-        // const days = {};
+        let total_faces = 0
 
         output_container = document.getElementById('output')
         let output = ''
@@ -44,11 +44,13 @@
 
                 for (const item of data) {
                     
-                    if (item.Faces.length >0 ){
+                    if (item.Faces.length > 0 ){
                         // console.log(item)
 
                         for (const face of item.Faces) {
                             console.log(face)
+
+                            total_faces += 1
 
                             // estrapola le età
                             the_age = Math.round(face.age)
@@ -81,10 +83,11 @@
                     }
                 }
 
+                output += '<p>volti totali: ' + total_faces + '</p>'
 
                 // mostra tutte età
                 output += '<table>'
-                output += '<thead><tr><td>età</td><td>n.</td></tr></theade>'
+                output += '<thead><tr><td>età</td><td>n.</td></tr></thead>'
                 for (const key in age) {
                     if (age.hasOwnProperty(key)) {
                         // console.log(key)
@@ -101,7 +104,7 @@
 
                 // mostra tutte espressioni
                 output += '<table>'
-                output += '<thead><tr><td>espressione</td><td>n.</td></tr></theade>'
+                output += '<thead><tr><td>espressione</td><td>n.</td></tr></thead>'
                 for (const key in expression) {
                     if (expression.hasOwnProperty(key)) {
                         // console.log(key)
@@ -118,7 +121,7 @@
 
                 // mostra tutti i generi
                 output += '<table>'
-                output += '<thead><tr><td>genere</td><td>n.</td></tr></theade>'
+                output += '<thead><tr><td>genere</td><td>n.</td></tr></thead>'
                 for (const key in gender) {
                     if (gender.hasOwnProperty(key)) {
                         // console.log(key)
