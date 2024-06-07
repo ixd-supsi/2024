@@ -10,7 +10,7 @@ const IMG_PATH       = getImagePath()    // percorso delle cartella delle immagi
 const CROP_PATH      = path.join(IMG_PATH, "..", "yolo_crop")
 const JSON_PATH      = path.join(IMG_PATH, "..", "data_yolo.json") // Nome del file per il salvataggio dei dati
 const SALVA_CROP     = true              // salvare le immagini croppate?
-const CROP_SIZE      = 256               // ridimensiona crop (lasciare “null” per dimensione originale)
+const CROP_SIZE      = null              // ridimensiona crop (lasciare “null” per dimensione originale)
 
 const PROB_THRESHOLD = 0.5               // thresold per detect di un oggetto
 const YOLO_IMAGE_W   = 640               // non cambiare (per ora)
