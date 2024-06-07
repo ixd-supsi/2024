@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>DOM</title>
+
+	<style>
+
+		body {
+			margin: 4em 2em;
+			background-color: lightgray;
+		}
+
+		img {
+			height: 32px;
+			display: block;
+		}
+
+		.griglia {
+			display: grid;
+			grid-template-columns: repeat(30, 1fr );
+			column-gap: 1px;
+			row-gap: 1px;
+			width: 1px;
+
+		}
+
+	</style>
+
+</head>
+<body>
+
+	<div class="griglia"></div>
+
+	<script>
+
+		async function boot() {
+
+			const CARTELLA_IMMAGINI = "img_128_max"
+			const ESTENSIONE = "jpg"
+
+			const dati = await fetch('data_face.json').then( d => d.json())
+
+			let output = ""
+
+			dati.forEach( elemento => {
+				elemento.Faces.forEach( (f, idx) => {
+					const path =  CARTELLA_IMMAGINI+ "/" + elemento.FileName + "_" + idx + "." + ESTENSIONE
+					output += "<img src='" + path + "'>"
+				})
+			})
+
+			document.querySelector('.griglia').innerHTML = output
+
+			for (let i=0; i<100; i++) {
+
+			}
+
+		}
+
+		boot()
+
+
+	</script>
+
+</body>
+</html>
