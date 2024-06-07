@@ -44,18 +44,27 @@
 
 			let output = ""
 
+			let contatore = 0
+
 			dati.forEach( elemento => {
-				elemento.Faces.forEach( (f, idx) => {
-					const path =  CARTELLA_IMMAGINI+ "/" + elemento.FileName + "_" + idx + "." + ESTENSIONE
-					output += "<img src='" + path + "'>"
+
+
+
+				elemento.Faces.forEach( (face, idx) => {
+
+					// if (face.gender == "female") {
+					// if (face.age >= 18) {
+					if (face.expression == "happy") {
+						const path =  CARTELLA_IMMAGINI+ "/" + elemento.FileName + "_" + idx + "." + ESTENSIONE
+						output += "<img src='" + path + "'>"
+						contatore++
+					}
 				})
 			})
 
 			document.querySelector('.griglia').innerHTML = output
 
-			for (let i=0; i<100; i++) {
-
-			}
+			console.log(contatore)
 
 		}
 
