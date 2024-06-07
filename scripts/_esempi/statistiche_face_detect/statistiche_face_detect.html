@@ -19,6 +19,11 @@
         const gender = {};
         let total_faces = 0
         let total_ages = 0
+        let males = 0
+        let females = 0
+
+        let total_ages_male = 0
+        let total_ages_female = 0
 
         output_container = document.getElementById('output')
         let output = ''
@@ -75,6 +80,15 @@
                             // estrapola il genere
                             the_gender = face.gender
 
+                            if (the_gender == 'male'){
+                                males += 1
+                                total_ages_male += the_age
+                            }
+                            else if (the_gender == 'female') {
+                                females += 1
+                                total_ages_female += the_age
+                            }
+
                             if (gender[the_gender]) {
                                 gender[the_gender]++;
                             } else {
@@ -86,7 +100,9 @@
                 }
 
                 output += '<p>volti totali: ' + total_faces + '</p>'
-                output += '<p>età media: ' + Math.round(total_ages/total_faces) + ' anni</p>'
+                output += '<p>età media complessiva: ' + Math.round(total_ages/total_faces) + ' anni</p>'
+                output += '<p>età media uomini: ' + Math.round(total_ages_male/males) + ' anni</p>'
+                output += '<p>età media donne: ' + Math.round(total_ages_female/females) + ' anni</p>'
 
                 // mostra tutte età
                 output += '<table>'
