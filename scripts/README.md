@@ -26,8 +26,20 @@ echo "export PATH=/opt/homebrew/bin:$PATH" >> ~/.zshrc
 
 # Imagemagick
 
-Ridmimensiona e converti le immagini di un’intera cartella: 
-```
-magick mogrify -verbose -resize 512x512 -format JPG -quality 80 -path ../img_512 *.*
-```
+Ridmimensiona e converti le immagini di un’intera cartella,  
+lato maggiore di 128px (ingrandisce e riduce)  
+cartella di destinazione: img_128  
+cartella sorgente: face_crop   
 
+```
+magick mogrify -verbose -resize 128x128 -format jpg -quality 80  -path ./img_128 ./face_crop/*.*
+```   
+
+Ridmimensiona e converti le immagini di un’intera cartella,  
+lato maggiore di 128px (riduce solamente)    
+cartella di destinazione: img_128_max  
+cartella sorgente: face_crop 
+```
+magick mogrify -verbose -resize 128x128\> -format JPG -quality 80 -path ./img_128_max ./face_crop/*.*
+
+```
